@@ -1,0 +1,55 @@
+@font-face {
+    font-family:ocs;
+    src:url('./font/OpenSans-Bold.ttf')format("truetype");
+}
+
+*{
+    font-family:ocs;
+    color: #3f3D52;
+}
+
+.Display4{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.Display3{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Display2{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Display1{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Heading{
+    font-size: 16px;
+    font-weight: bold;
+}
+.SubHeading{
+    font-size: 12px;
+    font-weight: bold;
+}
+.BodyCopy{
+    font-size: 14px;
+    font-weight: normal;
+}
+.Caption{
+    font-size: 12px;
+    font-weight: normal;
+}
+.Lighter{
+    color: #f5f5f7;
+}
+.Light{
+    color:#c6c2f2;
+}
+.Purple{
+    color:#655cc4;
+}
