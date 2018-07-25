@@ -36,13 +36,13 @@ const styles = theme => ({
         marginRight: drawerWidth,
     },
     drawerPaper: {
-        position: 'fixed',
+        position: 'relative',
         width: drawerWidth,
     },
     toolbar: theme.mixins.toolbar,
     content: {
         flexGrow: 1,
-        backgroundColor: '#3f3d52',
+        backgroundColor: theme.palette.background.default,
         padding: theme.spacing.unit * 3,
     },
 });

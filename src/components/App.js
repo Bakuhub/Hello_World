@@ -16,8 +16,9 @@ import {store} from '../store';
 import {push} from 'react-router-redux';
 import EnhancedTable from './test'
 import {Grid} from '@material-ui/core'
-import SideBar from './Layout/SideBar'
+import PermanentDrawer from './Layout/SideBar'
 import '../constants/App.css'
+import Layout from './Widget/Menu'
 
 const mapStateToProps = state => {
     return {
@@ -58,7 +59,7 @@ class App extends React.Component {
             return (
                 <Grid container>
                     <Grid item sm={3}>
-                        <SideBar currentUser={this.props.currentUser}/>
+                        <PermanentDrawer currentUser={this.props.currentUser}/>
                     </Grid>
                     <Grid item sm={9}>
                         <Header
@@ -75,6 +76,7 @@ class App extends React.Component {
                             <Route path="/@:username/favorites" component={ProfileFavorites}/>
                             <Route path="/@:username" component={Profile}/>
                             <Route path='/test' component={EnhancedTable}/>
+                            <Route path = '/pp' component={Layout}/>
                         </Switch>
                     </Grid>
                 </Grid>
