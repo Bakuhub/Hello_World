@@ -58,14 +58,12 @@ class App extends React.Component {
     render() {
         if (this.props.appLoaded) {
             return (
-                <Grid container
-spacing={0}
-
-                >
+                <Grid container>
                     <Grid item sm ={2}>
                         <PermanentDrawer currentUser={this.props.currentUser}/>
                     </Grid>
-                    <Grid item>
+
+                    <Grid item sm={10}>
                         <Grid container direction={'column'} alignItems={'stretch'}>
                             <Grid item >
                         <Header

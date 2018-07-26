@@ -100,7 +100,8 @@ class PermanentDrawer extends React.Component {
 
                 <List>
                     <ListItem>
-                        <div className={' Light Sub-Heading uppercase'}>General</div>
+                        <div className={' Light Sub-Heading uppercase'}
+                             style={{fontSize: "12px"}}>General</div>
                     </ListItem>
                     <ListItem button className={classes.nestedList}>
                         <Grid container
@@ -194,8 +195,7 @@ class PermanentDrawer extends React.Component {
 
                                 < div
                                     className={' Light Sub-Heading uppercase'}
-                                    style={{fontSize: "12px"}}> Store
-                                    Management
+                                    style={{fontSize: "12px"}}> Store Management
                                 </div>
                             </Grid>
                             <
