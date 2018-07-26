@@ -18,6 +18,7 @@ import EnhancedTable from './test'
 import {Grid} from '@material-ui/core'
 import PermanentDrawer from './Layout/SideBar'
 import '../constants/App.css'
+import '../constants/icon/Icon.css'
 import Layout from './Widget/Menu'
 
 const mapStateToProps = state => {

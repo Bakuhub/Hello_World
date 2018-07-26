@@ -1,19 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import { mailFolderListItems, otherMailFolderListItems } from './tileData';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import DraftsIcon from '@material-ui/icons/Drafts';
+import StarIcon from '@material-ui/icons/Star';
+import SendIcon from '@material-ui/icons/Send';
+import MailIcon from '@material-ui/icons/Mail';
 
 const drawerWidth = 240;
+const shops = [{
 
+    id: 1,
+    name: "test1"
+
+}, {
+
+    id: 1,
+    name: "test2"
+
+}, {
+
+    id: 1,
+    name: "test3"
+
+}, {
+
+    id: 1,
+    name: "test4"
+
+}]
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -26,6 +47,7 @@ const styles = theme => ({
         display: 'flex',
         width: '100%',
     },
+
     appBar: {
         width: `calc(100% - ${drawerWidth}px)`,
     },
@@ -38,13 +60,19 @@ const styles = theme => ({
     drawerPaper: {
         position: 'fixed',
         width: drawerWidth,
+        backgroundColor: '#3f3d52',
+        color: 'white'
+
+
     },
     toolbar: theme.mixins.toolbar,
     content: {
         flexGrow: 1,
-        backgroundColor: '#3f3d52',
         padding: theme.spacing.unit * 3,
     },
+    nestedList: {
+        color: 'white'
+    }
 });
 
 class PermanentDrawer extends React.Component {
@@ -59,10 +87,10 @@ class PermanentDrawer extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
-        const { anchor } = this.state;
+        const {classes} = this.props;
+        const {anchor} = this.state;
 
-        const drawer = (
+        return (
             <Drawer
                 variant="permanent"
                 classes={{
@@ -70,55 +98,55 @@ class PermanentDrawer extends React.Component {
                 }}
                 anchor={anchor}
             >
-                <div className={classes.toolbar} />
-                <Divider />
-                <List>{mailFolderListItems}</List>
-                <Divider />
-                <List>{otherMailFolderListItems}</List>
+                <div className={classes.toolbar}/>
+                <Divider/>
+
+                <List className={'Lighter'}>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <InboxIcon/>
+                        </ListItemIcon>
+                        <div >General</div>
+
+                    </ListItem>
+                    <ListItem button className={classes.nestedList}>
+                        <ListItemIcon>
+                            <InboxIcon/>
+                        </ListItemIcon>
+                        <div className={'Display1 Lighter'}>Dashboard</div>
+
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <StarIcon/>
+                        </ListItemIcon>
+                        <div className={'Display1 Lighter'}>Products</div>
+
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <SendIcon/>
+                        </ListItemIcon>
+                        <div className={'Display1 Lighter'}>Orders</div>
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <DraftsIcon color={'primary'}/>
+                        </ListItemIcon>
+                        <div className={classes.nestedList}>Settings</div>
+
+                    </ListItem>
+                </List>
+                <Divider/>
+                <List>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <MailIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary=""/>
+                    </ListItem>
+                </List>
             </Drawer>
-        );
-
-        let before = null;
-        let after = null;
-
-        if (anchor === 'left') {
-            before = drawer;
-        } else {
-            after = drawer;
-        }
-
-        return (
-            <div className={classes.root}>
-                <TextField
-                    id="permanent-anchor"
-                    select
-                    label="Anchor"
-                    value={anchor}
-                    onChange={this.handleChange}
-                    margin="normal"
-                >
-                    <MenuItem value="left">left</MenuItem>
-                    <MenuItem value="right">right</MenuItem>
-                </TextField>
-                <div className={classes.appFrame}>
-                    <AppBar
-                        position="absolute"
-                        className={classNames(classes.appBar, classes[`appBar-${anchor}`])}
-                    >
-                        <Toolbar>
-                            <Typography variant="title" color="inherit" noWrap>
-                                Permanent drawer
-                            </Typography>
-                        </Toolbar>
-                    </AppBar>
-                    {before}
-                    <main className={classes.content}>
-                        <div className={classes.toolbar} />
-                        <Typography>{'You think water moves fast? You should see ice.'}</Typography>
-                    </main>
-                    {after}
-                </div>
-            </div>
         );
     }
 }
