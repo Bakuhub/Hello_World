@@ -1,6 +1,6 @@
 @font-face {
     font-family:ocs;
-    src:url('./font/OpenSans-Bold.ttf')format("truetype");
+    src:url('./font/OpenSans-Regular.ttf')format("truetype");
 }
 
 *{
@@ -62,4 +62,4 @@
 .TextColor{
     color:#3f3d52;
 }
-
+.uppercase { text-transform: uppercase; }

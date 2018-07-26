@@ -1,19 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {withStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+import {Divider, Grid} from '@material-ui/core';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import StarIcon from '@material-ui/icons/Star';
-import SendIcon from '@material-ui/icons/Send';
-import MailIcon from '@material-ui/icons/Mail';
+import {Link} from 'react-router-dom'
+import {withStyles} from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 const drawerWidth = 240;
+
 const shops = [{
 
     id: 1,
@@ -39,30 +35,11 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
     },
-    appFrame: {
-        height: 430,
-        zIndex: 1,
-        overflow: 'hidden',
-        position: 'relative',
-        display: 'flex',
-        width: '100%',
-    },
 
-    appBar: {
-        width: `calc(100% - ${drawerWidth}px)`,
-    },
-    'appBar-left': {
-        marginLeft: drawerWidth,
-    },
-    'appBar-right': {
-        marginRight: drawerWidth,
-    },
     drawerPaper: {
-        position: 'fixed',
         width: drawerWidth,
-        backgroundColor: '#3f3d52',
+        backgroundColor: '#2E2833',
         color: 'white'
-
 
     },
     toolbar: theme.mixins.toolbar,
@@ -71,8 +48,24 @@ const styles = theme => ({
         padding: theme.spacing.unit * 3,
     },
     nestedList: {
-        color: 'white'
-    }
+        color: '#9D91A8',
+        backgroundColor: '#494151',
+        borderRadius: '30px 0 0 30px',
+        padding: '10px',
+        fontSize: '14px',
+        marginLeft: '10px',
+        borderRight: '15px solid #905CC4'
+
+    },
+    normalList: {
+        padding: '10px',
+        fontSize: '14px',
+        marginLeft: '10px',
+    },
+    icon: {
+        fontSize: '20px'
+    },
+
 });
 
 class PermanentDrawer extends React.Component {
@@ -85,6 +78,9 @@ class PermanentDrawer extends React.Component {
             anchor: event.target.value,
         });
     };
+    dodajAktywne = event => {
+        console.log(event)
+    }
 
     render() {
         const {classes} = this.props;
@@ -98,56 +94,131 @@ class PermanentDrawer extends React.Component {
                 }}
                 anchor={anchor}
             >
-                <div className={classes.toolbar}/>
+                <div className={'icon-logo'} style={{padding: '10px'}}/>
+
                 <Divider/>
 
-                <List className={'Lighter'}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <InboxIcon/>
-                        </ListItemIcon>
-                        <div >General</div>
+                <List>
+                    <ListItem>
+                        <div className={' Light Sub-Heading uppercase'}>General</div>
+                    </ListItem>
+                    <ListItem button className={classes.nestedList}>
+                        <Grid container
+                              alignItems={'center'}
+                        >
+
+                            <Grid item sm={2}>
+                                <Grid container alignItems={'center'}
+                                >
+                                    <Grid item sm={2}/>
+
+                                    <Grid item sm={10}>
+                                        <div className={"icon-house-24 "}/>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid item sm={9}>
+                                <div className={'Sub-Heading Lighter'}>Dashboard</div>
+                            </Grid>
+                        </Grid>
+
+                    </ListItem>
+
+                    <ListItem button component={Link} to={'/login'} className={classes.normalList}>
+                        <Grid container alignItems={'center'}>
+
+                            <Grid item sm={2}>
+                                <Grid container alignItems={'center'}>
+                                    <Grid item sm={2}/>
+
+                                    <Grid item sm={10}>
+                                        <div className=" icon-shirt-24  "/>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid item sm={9}>
+                                <div className={'Sub-Heading Lighter'}>Products</div>
+                            </Grid>
+                        </Grid>
 
                     </ListItem>
                     <ListItem button className={classes.nestedList}>
-                        <ListItemIcon>
-                            <InboxIcon/>
-                        </ListItemIcon>
-                        <div className={'Display1 Lighter'}>Dashboard</div>
+                        <Grid container alignItems={'center'}>
+                            <Grid item sm={2}>
+                                <Grid container alignItems={'center'}
+                                >
+                                    <Grid item sm={2}/>
+
+                                    <Grid item sm={10}>
+                                        <div className=" icon-box-24  "/>
+                                    </Grid>
+                                </Grid>
+
+                            </Grid>
+                            <Grid item sm={9}>
+                                <div className={'Sub-Heading Lighter'}>Orders</div>
+                            </Grid>
+                        </Grid>
 
                     </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <StarIcon/>
-                        </ListItemIcon>
-                        <div className={'Display1 Lighter'}>Products</div>
+                    <ListItem button className={classes.nestedList}
+                    >
+                        <Grid container alignItems={'center'}>
 
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <SendIcon/>
-                        </ListItemIcon>
-                        <div className={'Display1 Lighter'}>Orders</div>
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <DraftsIcon color={'primary'}/>
-                        </ListItemIcon>
-                        <div className={classes.nestedList}>Settings</div>
+                            <Grid item sm={2}>
+                                <Grid container alignItems={'center'}
+                                >
+                                    <Grid item sm={2}/>
 
+                                    <Grid item sm={10}>
+
+                                        <div className=" icon-cog-24  "/>
+                                    </Grid>
+                                </Grid>
+
+                            </Grid>
+                            <Grid item sm={9}>
+                                <div className={'Sub-Heading Lighter'}>Settings</div>
+                            </Grid></Grid>
                     </ListItem>
                 </List>
-                <Divider/>
-                <List>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <MailIcon/>
-                        </ListItemIcon>
-                        <ListItemText primary=""/>
+                < Divider/>
+                < List>
+                    < ListItem>
+                        < Grid
+                            container
+                            alignItems={'center'}>
+                            < Grid
+                                item
+                                sm={11}>
+
+                                < div
+                                    className={' Light Sub-Heading uppercase'}
+                                    style={{fontSize: "12px"}}> Store
+                                    Management
+                                </div>
+                            </Grid>
+                            <
+                                Grid
+                                item
+                                sm={1}>
+                                < div
+                                    className={'icon-add-16'}
+                                    style={{fontSize: '13px'}}
+                                />
+                            </Grid></Grid>
+
+                    </ListItem>
+                    <
+                        ListItem
+                        button>
+
+                        < ListItemText
+                            primary=""/>
                     </ListItem>
                 </List>
-            </Drawer>
-        );
+            </Drawer>)
+
     }
 }
 

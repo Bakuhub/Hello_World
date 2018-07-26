@@ -1,5 +1,4 @@
 import agent from '../agent';
-import Header from './Header';
 import React from 'react';
 import {connect} from 'react-redux';
 import {APP_LOAD, REDIRECT} from '../constants/actionTypes';
@@ -20,6 +19,7 @@ import PermanentDrawer from './Layout/SideBar'
 import '../constants/App.css'
 import '../constants/icon/Icon.css'
 import Layout from './Widget/Menu'
+import Header from './Layout/Header'
 
 const mapStateToProps = state => {
     return {
@@ -58,14 +58,22 @@ class App extends React.Component {
     render() {
         if (this.props.appLoaded) {
             return (
-                <Grid container>
-                    <Grid item sm={3}>
+                <Grid container
+spacing={0}
+
+                >
+                    <Grid item sm ={2}>
                         <PermanentDrawer currentUser={this.props.currentUser}/>
                     </Grid>
-                    <Grid item sm={9}>
+                    <Grid item>
+                        <Grid container direction={'column'} alignItems={'stretch'}>
+                            <Grid item >
                         <Header
                             appName={this.props.appName}
                             currentUser={this.props.currentUser}/>
+                            </Grid>
+                            <Grid item>
+                                <div> testing</div>
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route path="/login" component={Login}/>
@@ -79,6 +87,8 @@ class App extends React.Component {
                             <Route path='/test' component={EnhancedTable}/>
                             <Route path = '/pp' component={Layout}/>
                         </Switch>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
 
@@ -86,9 +96,7 @@ class App extends React.Component {
         }
         return (
             <div>
-                <Header
-                    appName={this.props.appName}
-                    currentUser={this.props.currentUser}/>
+
             </div>
         );
     }
