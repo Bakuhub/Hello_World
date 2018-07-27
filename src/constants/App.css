@@ -63,3 +63,41 @@
     color:#3f3d52;
 }
 .uppercase { text-transform: uppercase; }
+
+
+body{ margin:0px; padding: 0px; border: 0px;}
+
+.section-container{
+    display: flex;
+}
+
+/* This is the sidebar area */
+.section-a{
+    width: 235px;
+    height: 100%;
+    overflow: auto;
+}
+
+/* This is the content area */
+.section-b{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+}
+
+/* This is the top nav area */
+.navigation{
+    height: 60px;
+}
+
+/* This is the content */
+.content{
+    display: flex;
+    flex:1;
+    overflow-x: scroll;
+}
+
+/* JUST FOR TESTING THE CCONTAINER*/
+.sample-div{
+    height: 1000px;
+}

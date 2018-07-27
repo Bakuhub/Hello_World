@@ -58,37 +58,46 @@ class App extends React.Component {
     render() {
         if (this.props.appLoaded) {
             return (
-                <Grid container>
-                    <Grid item sm ={2}>
-                        <PermanentDrawer currentUser={this.props.currentUser}/>
-                    </Grid>
+                <div className="section-container">
 
-                    <Grid item sm={10}>
-                        <Grid container direction={'column'} alignItems={'stretch'}>
-                            <Grid item >
-                        <Header
-                            appName={this.props.appName}
-                            currentUser={this.props.currentUser}/>
-                            </Grid>
-                            <Grid item>
-                                <div> testing</div>
-                        <Switch>
-                            <Route exact path="/" component={Home}/>
-                            <Route path="/login" component={Login}/>
-                            <Route path="/register" component={Register}/>
-                            <Route path="/editor/:slug" component={Editor}/>
-                            <Route path="/editor" component={Editor}/>
-                            <Route path="/article/:id" component={Article}/>
-                            <Route path="/settings" component={Settings}/>
-                            <Route path="/@:username/favorites" component={ProfileFavorites}/>
-                            <Route path="/@:username" component={Profile}/>
-                            <Route path='/test' component={EnhancedTable}/>
-                            <Route path = '/pp' component={Layout}/>
-                        </Switch>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
+                    <div className="section-a">
+
+                        <div className="sample-div">
+                            <PermanentDrawer currentUser={this.props.currentUser}/>
+
+                        </div>
+
+                    </div>
+
+                    <div className="section-b">
+                        <div className="navigation">
+
+                            <Header
+                                appName={this.props.appName}
+                                currentUser={this.props.currentUser}/>
+                        </div>
+                        <div className="content">
+
+                            <div className="sample-div">
+                                <Switch>
+                                    <Route exact path="/" component={Home}/>
+                                    <Route path="/login" component={Login}/>
+                                    <Route path="/register" component={Register}/>
+                                    <Route path="/editor/:slug" component={Editor}/>
+                                    <Route path="/editor" component={Editor}/>
+                                    <Route path="/article/:id" component={Article}/>
+                                    <Route path="/settings" component={Settings}/>
+                                    <Route path="/@:username/favorites" component={ProfileFavorites}/>
+                                    <Route path="/@:username" component={Profile}/>
+                                    <Route path='/test' component={EnhancedTable}/>
+                                    <Route path = '/pp' component={Layout}/>
+                                </Switch>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
 
             );
         }
