@@ -101,3 +101,20 @@ body{ margin:0px; padding: 0px; border: 0px;}
 .sample-div{
     height: 1000px;
 }
+.lighterBorder{
+    border: 1px solid #E8E4ED;
+}
+.greyBackGround{
+    background-color: #FAFAFA;
+}
+.whiteBackGround{
+    background-color: #FFFFFF;
+}
+.regHeight{
+    height:40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.purpleButton{
+    background-color: #905CC4;
+}
