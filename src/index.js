@@ -9,10 +9,10 @@ import { ConnectedRouter } from 'react-router-redux';
 import App from './components/App';
 
 ReactDOM.render((
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Switch>
-        <Route path="/" component={App} />
+  <Provider store={store} style ={ {height:'100%'}}>
+    <ConnectedRouter history={history} style ={ {height:'100%'}}>
+      <Switch style ={ {height:'100%'}}>
+        <Route path="/" component={App}  style ={ {height:'100%'}} />
       </Switch>
     </ConnectedRouter>
   </Provider>

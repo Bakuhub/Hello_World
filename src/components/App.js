@@ -14,7 +14,6 @@ import Settings from '../components/Settings';
 import {store} from '../store';
 import {push} from 'react-router-redux';
 import EnhancedTable from './test'
-import {Grid} from '@material-ui/core'
 import PermanentDrawer from './Layout/SideBar'
 import '../constants/App.css'
 import '../constants/icon/Icon.css'
@@ -58,42 +57,40 @@ class App extends React.Component {
     render() {
         if (this.props.appLoaded) {
             return (
-                <div className="section-container">
+                <div className="section-container" style ={{height:'100%'}}>
 
-                    <div className="section-a">
+                    <div className="section-a" style ={{height:'100%'}}>
 
-                        <div className="sample-div">
+                        <div className="sample-div" style ={ {height:'100%'}}>
                             <PermanentDrawer currentUser={this.props.currentUser}/>
 
                         </div>
 
                     </div>
 
-                    <div className="section-b">
-                        <div className="navigation">
+                    <div className="section-b" style ={ {height:'100%'}}>
+                        <div className="navigation" >
 
                             <Header
                                 appName={this.props.appName}
-                                currentUser={this.props.currentUser}/>
+                                currentUser={this.props.currentUser} style ={ {height:'100%'}}/>
                         </div>
                         <div className="content">
-
-                            <div className="sample-div">
-                                <Switch>
-                                    <Route exact path="/" component={Home}/>
-                                    <Route path="/login" component={Login}/>
-                                    <Route path="/register" component={Register}/>
-                                    <Route path="/editor/:slug" component={Editor}/>
-                                    <Route path="/editor" component={Editor}/>
-                                    <Route path="/article/:id" component={Article}/>
-                                    <Route path="/settings" component={Settings}/>
-                                    <Route path="/@:username/favorites" component={ProfileFavorites}/>
-                                    <Route path="/@:username" component={Profile}/>
-                                    <Route path='/test' component={EnhancedTable}/>
-                                    <Route path = '/pp' component={Layout}/>
-                                </Switch>
-                            </div>
-
+<div style ={ {height:'100%'}}>
+                            <Switch>
+                                <Route exact path="/" component={Home}/>
+                                <Route path="/login" component={Login}/>
+                                <Route path="/register" component={Register}/>
+                                <Route path="/editor/:slug" component={Editor}/>
+                                <Route path="/editor" component={Editor}/>
+                                <Route path="/article/:id" component={Article}/>
+                                <Route path="/settings" component={Settings}/>
+                                <Route path="/@:username/favorites" component={ProfileFavorites}/>
+                                <Route path="/@:username" component={Profile}/>
+                                <Route path='/test' component={EnhancedTable}/>
+                                <Route path='/pp' component={Layout}/>
+                            </Switch>
+</div>
                         </div>
                     </div>
                 </div>
@@ -103,7 +100,7 @@ class App extends React.Component {
         }
         return (
             <div>
-gg
+                gg
             </div>
         );
     }

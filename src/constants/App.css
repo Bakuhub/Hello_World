@@ -93,13 +93,10 @@ body{ margin:0px; padding: 0px; border: 0px;}
 /* This is the content */
 .content{
     display: flex;
-    flex:1;
+    overflow-y: auto;
+    flex: 1 1 auto;
     overflow-x: scroll;
-}
-
-/* JUST FOR TESTING THE CCONTAINER*/
-.sample-div{
-    height: 1000px;
+    height: 0;
 }
 .lighterBorder{
     border: 1px solid #E8E4ED;
