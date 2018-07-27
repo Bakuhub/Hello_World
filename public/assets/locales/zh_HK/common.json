@@ -1,0 +1,10 @@
+{
+    "languages": {
+        "en_US": {
+            "label": "English"
+        },
+        "zh_HK": {
+            "label": "繁體"
+        }
+    }
+}
