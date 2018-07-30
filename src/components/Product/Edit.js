@@ -7,7 +7,7 @@ import InputBar from '../Widget/InputBar'
 import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
 import PairCancelButton from '../Widget/PairCancelButton'
-
+import IntegrationReactSelect from '../Widget/TagsBar'
 const styles = theme => ({
     root: {
         padding: '30px'
@@ -112,6 +112,10 @@ class ProductEdit extends React.Component {
                                         <Grid item sm={1}>
                                             <div className={'egwewqngn'}/>
                                         </Grid>
+                                        <Grid item sm={11}>
+                                            <IntegrationReactSelect/>
+                                        </Grid>
+
                                     </Grid>
                                 </Grid></Grid>
                         </Grid>
