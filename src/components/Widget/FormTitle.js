@@ -7,7 +7,7 @@ import {Divider} from '@material-ui/core'
 const styles = theme => ({
     title: {
         color: styleGuide.prupleText,
-        fontSize: '18px',
+        fontSize: styleGuide.XXL,
         fontWeight:'bold'
     }
 });
@@ -33,6 +33,7 @@ class FormTitle extends React.Component {
     </div>
     <br/>
     <Divider/>
+    <br/>
 </Fragment>
 
         );

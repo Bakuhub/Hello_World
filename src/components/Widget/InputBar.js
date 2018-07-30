@@ -12,9 +12,16 @@ const styles = theme => ({
         border: '1px solid #E8E4ED',
         fontSize: '14px',
         color: styleGuide.prupleText,
-        paddingLeft:'10px',
-        paddingRight:'10px',
+        paddingLeft: '10px',
+        paddingRight: '10px',
         boxShadow: 'inset 0 5px 1px -5px #000000'
+    },
+    title: {
+        color: styleGuide.lighterText,
+        fontSize: styleGuide.M,
+
+        fontWeight: 'lighter',
+        paddingBottom:styleGuide.M,
     }
 });
 
@@ -22,13 +29,15 @@ class PermanentDrawer extends React.Component {
     state = {
         anchor: 'left',
     };
-    constructor(){
+
+    constructor() {
         super()
         this.state = {
-            placeHolder :''
-
+            placeHolder: '',
+            title: ''
         }
     }
+
     handleChange = name => event => {
         this.setState({
             [name]: event.target.value,
@@ -42,6 +51,10 @@ class PermanentDrawer extends React.Component {
 
         return (
             <div>
+                <div className={classes.title}>
+                    {this.props.title}
+                </div>
+
                 < Input className={classes.inputBar}
                         fullWidth={true}
                         placeholder={this.props.placeHolder

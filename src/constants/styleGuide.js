@@ -1,2 +1,10 @@
 export const greyInputBackGround = '#F5F5F7';
 export const prupleText = '#321052'
+export const greyPaperShadow ='#F0F1F3'
+export const lighterText = '#7B688C'
+export const XXL = '18px'
+export const XL = '16px'
+export const L = '14px'
+export const M = '12px'
+export const S = '10px'
+export const XS = '8px'
