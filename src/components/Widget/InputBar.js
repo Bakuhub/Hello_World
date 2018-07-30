@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import * as styleGuide from '../../constants/styleGuide'
-import {Input} from '@material-ui/core'
+import {Input,Grid} from '@material-ui/core'
+
 
 const styles = theme => ({
     inputBar: {
@@ -34,7 +35,10 @@ class PermanentDrawer extends React.Component {
         super()
         this.state = {
             placeHolder: '',
-            title: ''
+            title: '',
+            startAdornment:'',
+            endAdornment:'',
+
         }
     }
 
@@ -50,7 +54,7 @@ class PermanentDrawer extends React.Component {
         const {classes} = this.props;
 
         return (
-            <div>
+            <Grid container alignItems={'center'}>
                 <div className={classes.title}>
                     {this.props.title}
                 </div>
@@ -61,9 +65,12 @@ class PermanentDrawer extends React.Component {
                         }
                         disableUnderline={true}
                         value={this.state.name}
-                        onChange={this.handleChange('name')}/>
-                <div>{this.state.name}</div>
-            </div>
+                        onChange={this.handleChange('name')}
+                        startAdornment={this.props.startAdornment}
+                        endAdornment={this.props.endAdornment}
+
+                />
+            </Grid>
         );
     }
 }
