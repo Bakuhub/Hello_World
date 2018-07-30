@@ -6,7 +6,7 @@ import {Divider} from '@material-ui/core'
 
 const styles = theme => ({
     title: {
-        color: styleGuide.prupleText,
+        color: styleGuide.purpleText,
         fontSize: styleGuide.XXL,
         fontWeight:'bold'
     }

@@ -11,14 +11,14 @@ const styles = theme => ({
         height: '35px',
         border: '1px solid #E8E4ED',
         fontSize: '14px',
-        color: styleGuide.prupleText,
+        color: styleGuide.purpleText,
         paddingLeft: '10px',
         paddingRight: '10px',
         boxShadow: 'inset 0 5px 1px -5px #000000'
     },
     title: {
         color: styleGuide.lighterText,
-        fontSize: styleGuide.M,
+        fontSize: styleGuide.XL,
 
         fontWeight: 'lighter',
         paddingBottom:styleGuide.M,

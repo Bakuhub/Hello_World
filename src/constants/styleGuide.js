@@ -1,7 +1,9 @@
 export const greyInputBackGround = '#F5F5F7';
-export const prupleText = '#321052'
+export const purpleText = '#321052'
 export const greyPaperShadow ='#F0F1F3'
 export const lighterText = '#7B688C'
+export const purpleButton = '#905CC4'
+export const XXXL='28px'
 export const XXL = '18px'
 export const XL = '16px'
 export const L = '14px'
