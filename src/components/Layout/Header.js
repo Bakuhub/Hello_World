@@ -27,8 +27,8 @@ class Header extends React.Component {
 
                           <Grid item sm = {10}>
                               <Input placeholder={'Looking for anything?'}
-                                     disableUnderline={true}
-                              style ={{color:'#C7C6CD'}}/>
+                                     className={'ThinBody'}
+                                     disableUnderline={true}/>
                           </Grid>
                       </Grid>
                     </Grid>

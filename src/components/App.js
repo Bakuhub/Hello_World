@@ -17,8 +17,9 @@ import EnhancedTable from './test'
 import PermanentDrawer from './Layout/SideBar'
 import '../constants/App.css'
 import '../constants/icon/Icon.css'
-import Layout from './Widget/Menu'
+import InputBar from './Widget/InputBar'
 import Header from './Layout/Header'
+import ProductEdit from './Product/Edit'
 
 const mapStateToProps = state => {
     return {
@@ -57,27 +58,26 @@ class App extends React.Component {
     render() {
         if (this.props.appLoaded) {
             return (
-                <div className="section-container" style ={{height:'100%'}}>
+                <div className="section-container" style={{height: '100%'}}>
 
-                    <div className="section-a" style ={{height:'100%'}}>
+                    <div className="section-a" style={{height: '100%'}}>
 
-                        <div className="sample-div" style ={ {height:'100%'}}>
+                        <div className="sample-div" style={{height: '100%'}}>
                             <PermanentDrawer currentUser={this.props.currentUser}/>
 
                         </div>
 
                     </div>
 
-                    <div className="section-b" style ={ {height:'100%'}}>
-                        <div className="navigation" >
+                    <div className="section-b" style={{height: '100%'}}>
+                        <div className="navigation">
 
                             <Header
                                 appName={this.props.appName}
-                                currentUser={this.props.currentUser} style ={ {height:'100%'}}/>
+                                currentUser={this.props.currentUser} style={{height: '100%'}}/>
                         </div>
                         <div className="content">
-<div style ={ {height:'100%'}}>
-                            <Switch>
+                            <Switch style={{height: '100%', width: '100%'}}>
                                 <Route exact path="/" component={Home}/>
                                 <Route path="/login" component={Login}/>
                                 <Route path="/register" component={Register}/>
@@ -88,9 +88,9 @@ class App extends React.Component {
                                 <Route path="/@:username/favorites" component={ProfileFavorites}/>
                                 <Route path="/@:username" component={Profile}/>
                                 <Route path='/test' component={EnhancedTable}/>
-                                <Route path='/pp' component={Layout}/>
+                                <Route path='/pp' component={InputBar}/>
+                                <Route path={'/product'} component = {ProductEdit} />
                             </Switch>
-</div>
                         </div>
                     </div>
                 </div>

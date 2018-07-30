@@ -12,6 +12,7 @@
     "classnames": "^2.2.6",
     "history": "^4.6.3",
     "i18next": "^11.5.0",
+    "i18next-xhr-backend": "^1.5.1",
     "marked": "^0.4.0",
     "npm": "^6.2.0",
     "prop-types": "^15.5.10",

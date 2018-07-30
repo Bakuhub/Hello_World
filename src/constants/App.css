@@ -33,7 +33,7 @@
     font-weight: bold;
 }
 .SubHeading{
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
 }
 .BodyCopy{
@@ -44,6 +44,11 @@
     font-size: 12px;
     font-weight: normal;
 }
+.ThinBody{
+    font-size:10px;
+    font-weight:lighter;
+}
+
 .Lighter{
     color: #f5f5f7;
 }
@@ -114,4 +119,30 @@ body{ margin:0px; padding: 0px; border: 0px;}
 }
 .purpleButton{
     background-color: #905CC4;
+}
+.smPadding{
+
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #C7C6CD;
+    opacity: 1; /* Firefox */
+    font-size:13px;
+    font-weight:lighter;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #C7C6CD;
+    font-size:13px;
+    font-weight:lighter;
+
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #C7C6CD;
+    font-size:13px;
+    font-weight:lighter;
+
 }

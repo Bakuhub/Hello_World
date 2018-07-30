@@ -145,6 +145,7 @@
 .icon-search-16:before {
   content: "\e91d";
   color: #321052;
+  font-size: 16px;
 }
 .icon-search-24:before {
   content: "\e91e";

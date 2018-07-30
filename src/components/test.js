@@ -10,7 +10,6 @@ import {
     Grid,
     IconButton,
     Input,
-    ListItem,
     Paper,
     Table,
     TableBody,
@@ -131,6 +130,7 @@ let EnhancedTableToolbar = props => {
                     </Typography>
                 )}
             </div>
+
             <div className={classes.spacer}/>
             <div className={classes.actions}>
                 {numSelected > 0 ? (
@@ -250,7 +250,9 @@ class EnhancedTable extends React.Component {
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
 
         return (
-            <Grid container direction={'column'} style={{paddingLeft: '35px', paddingRight: '35px'}}>
+            <Grid container direction={'column'}
+                  className={'greyBackGround'}
+                  style={{paddingLeft: '35px', paddingRight: '35px'}}>
                 <br/>
                 <br/>
                 <br/>
@@ -260,55 +262,69 @@ class EnhancedTable extends React.Component {
                 <br/>
                 <Grid item>
                     <Grid container alignItems={'center'}>
-                        <Grid item sm={6}>
+                        <Grid item sm={5}>
                             <Grid container alignItems={'center'}>
                                 <Grid item sm={3}>
-                                    <Grid container alignItems={'center'} spacing={6}
+                                    <Grid container alignItems={'center'} spacing={23}
                                           className={'lighterBorder greyBackGround regHeight'}>
-                                        <Grid item sm={2}>
-                                            <div className={'icon-chart-16'} style={{fontSize: '15px'}}/>
+                                        <Grid item sm={1}>
+                                            <div className={'icon-chart-16'} style={{fontSize: '12px'}}/>
                                         </Grid>
+
+                                        <Grid item sm={1}/>
                                         <Grid item sm={8}>
 
-                                            <div style={{fontSize: '15px'}}> Category</div>
+                                            <div  className={'BodyCopy Darker'}> Category</div>
                                         </Grid>
-                                        <Grid item sm={2}>
-                                            <div className={' icon-down-16'} style={{fontSize: '15px'}}/>
+                                        <Grid item sm={1}/>
+                                        <Grid item sm={1}>
+                                            <div className={' icon-down-16'}
+
+                                                 style={{fontSize: '12px',color:'#321052'}}/>
                                         </Grid></Grid></Grid>
                                 <Grid item sm={7}>
                                     <Grid container alignItems={'center'}
                                           className={' whiteBackGround lighterBorder regHeight'}
-                                    spacing={48}>
+                                          >
                                         <Grid item sm={1}>
-                                            <div className={' icon-search-16'}/>
+                                            <div className={' icon-search-16'} style={{}}/>
                                         </Grid>
-                                        <Grid item sm={5}>
+                                        <Grid item sm={10}>
 
-                                            <Input placeholder={'Looking for anything?'}
-                                                   disableUnderline={true}/>
+                                            <Input placeholder={'Search Products...'}
+                                                   disableUnderline={true}
+                                            className={'Thin'}
+                                            />
                                         </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
 
-                        <Grid item sm={4}/>
-                        <Grid item sm={2} >
-                            <Grid container alignItems={'center'} className={'regHeight purpleButton '}>
-                               <Grid item sm={3}>
-                                   <div className={' icon-add-16'}/>
-                               </Grid>
-                                <Grid item sm={9}>
-                                <div>add Product</div>
+                        <Grid item sm={5}/>
+                        <Grid item sm={2}>
+                            <Grid container alignItems={'center'}>
+                                <Grid item sm={4}/>
+                                <Grid item sm={8}>
+                                    <Grid container alignItems={'center'} className={'regHeight purpleButton '}>
+                                        <Grid item sm={2}>
+                                            <div className={' icon-add-16'} style={{fontSize: '14px'}}/>
+                                        </Grid>
+                                        <Grid item sm ={1}/>
+                                        <Grid item sm={9}>
+                                            <div className={'Lighter SubHeading'}>Add Product</div>
+                                        </Grid>
+                                    </Grid>
                                 </Grid>
                             </Grid>
+
                         </Grid>
                     </Grid>
                     <br/>
 
                     <Paper className={classes.root}>
                         <EnhancedTableToolbar numSelected={selected.length}/>
-                        <div className={classes.tableWrapper}>
+                        <div >
                             <Table className={classes.table} aria-labelledby="tableTitle">
                                 <EnhancedTableHead
                                     numSelected={selected.length}
