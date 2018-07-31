@@ -7,12 +7,15 @@ import * as styleGuide from "../../constants/styleGuide";
 const styles = theme => ({
     dropZone: {
         width: '100%',
-        padding:'20px 10px 20px 10px',
+        padding:'40px 0px 40px 0px',
         backgroundColor: styleGuide.greyInputBackGround,
+        fontSize: styleGuide.L,
+        borderRadius:'5px',
+        border:'1px dashed'+styleGuide.greyDivider
     },
     purple: {
         color: styleGuide.purpleButton,
-        fontSize: styleGuide.M,
+        fontWeight:'bold'
     },
 });
 
