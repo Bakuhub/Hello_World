@@ -8,6 +8,7 @@ import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
 import PairCancelButton from '../Widget/PairCancelButton'
 import IntegrationReactSelect from '../Widget/TagsBar'
+import DragDropZone from '../Widget/DragDropZone'
 
 const styles = theme => ({
     root: {
@@ -82,24 +83,9 @@ class ProductEdit extends React.Component {
                                         <Grid item sm={12}>
                                             <FormTitle title={'Images & Videos'}/>
                                         </Grid>
-                                        <Grid item sm={12}>
-                                            <InputBar placeHolder={"displayed name"} title={'Name'}/>
-                                        </Grid>
-                                        <Grid item sm={12}>
-                                            <InputBar placeHolder={"Type some description..."} title={'Description'}/>
-                                        </Grid>
-                                        <Grid item sm={12}>
-                                            <Grid container spacing={40}>
-                                                <Grid item sm={6}>
-                                                    <InputBar placeHolder={""}
-                                                              title={'Price(default for variants)'}
-                                                    />
-                                                </Grid>
-                                                <Grid item sm={6}>
-                                                    <InputBar placeHolder={"Product Category"}
-                                                              title={'Product Category'}/>
-                                                </Grid>
-                                            </Grid></Grid>
+                                     <Grid item sm={12}>
+                                         <DragDropZone/>
+                                     </Grid>
                                     </Grid>
                                 </Grid>
                                 <Grid item>
