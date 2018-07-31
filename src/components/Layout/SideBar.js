@@ -130,7 +130,7 @@ class PermanentDrawer extends React.Component {
 
                     </ListItem>
 
-                    <ListItem button component={Link} to={'/login'} className={classes.normalList}>
+                    <ListItem button component={Link} to={'/test'} className={classes.normalList}>
                         <Grid container alignItems={'center'}>
 
                             <Grid item sm={2}>

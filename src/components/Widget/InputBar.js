@@ -26,7 +26,7 @@ const styles = theme => ({
     }
 });
 
-class PermanentDrawer extends React.Component {
+class InputBar extends React.Component {
     state = {
         anchor: 'left',
     };
@@ -75,8 +75,8 @@ class PermanentDrawer extends React.Component {
     }
 }
 
-PermanentDrawer.propTypes = {
+InputBar.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PermanentDrawer);
+export default withStyles(styles)(InputBar);

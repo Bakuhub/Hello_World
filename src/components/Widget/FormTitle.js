@@ -8,7 +8,7 @@ const styles = theme => ({
     title: {
         color: styleGuide.purpleText,
         fontSize: styleGuide.XXL,
-        fontWeight:'bold'
+        fontWeight: 'bold'
     }
 });
 
@@ -16,25 +16,26 @@ class FormTitle extends React.Component {
     state = {
         anchor: 'left',
     };
+
     constructor() {
         super()
         this.state = {
             title: ''
-
         }
     }
+
     render() {
         const {classes} = this.props;
 
         return (
-<Fragment>
-    <div className={classes.title}>
-        {this.props.title}
-    </div>
-    <br/>
-    <Divider/>
-    <br/>
-</Fragment>
+            <Fragment>
+                <div className={classes.title}>
+                    {this.props.title}
+                </div>
+                <br/>
+                <Divider/>
+                <br/>
+            </Fragment>
 
         );
     }
