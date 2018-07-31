@@ -20,6 +20,7 @@ import '../constants/icon/Icon.css'
 import InputBar from './Widget/InputBar'
 import Header from './Layout/Header'
 import ProductEdit from './Product/Edit'
+import TagsBar from './Widget/TagsBar'
 
 const mapStateToProps = state => {
     return {
@@ -90,6 +91,7 @@ class App extends React.Component {
                                 <Route path='/test' component={EnhancedTable}/>
                                 <Route path='/pp' component={InputBar}/>
                                 <Route path={'/product'} component = {ProductEdit} />
+                                <Route path={'/ggg'} component ={TagsBar}/>
                             </Switch>
                         </div>
                     </div>

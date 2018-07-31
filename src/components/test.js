@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
-
+import TagsBar from './Widget/TagsBar'
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import {
@@ -260,6 +260,9 @@ class EnhancedTable extends React.Component {
                     <div className={'Darker Display4'}> Product List</div>
                 </Grid>
                 <br/>
+                <Grid item>
+                    <TagsBar/>
+                </Grid>
                 <Grid item>
                     <Grid container alignItems={'center'}>
                         <Grid item sm={5}>
