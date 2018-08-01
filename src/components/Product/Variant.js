@@ -179,7 +179,11 @@ class Variant extends React.Component {
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                            </Grid></Grid></Grid></Grid></Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
 
         );
     }

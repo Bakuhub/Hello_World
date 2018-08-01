@@ -1,9 +1,10 @@
 import React from 'react';
 import List from '@material-ui/core/List';
-import {Grid} from '@material-ui/core';
+import {Grid,Tooltip,Button} from '@material-ui/core';
 import ListItem from '@material-ui/core/ListItem';
 import {withStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+
 
 const drawerWidth = 235;
 
@@ -101,7 +102,9 @@ class LanguageSetting extends React.Component {
                                 </div>
                             </Grid>
                             <Grid item sm={1}>
-                                <div className={'icon-remove-16'} style={{fontSize: '12px'}}/>
+                                    <Button variant={'fab'} style={{ backgroundColor:'#efefef'}}>
+                                        <div className={'icon-remove-16'} style={{fontSize: '12px'}}/>
+                                    </Button>
                             </Grid>
 
                         </Grid>

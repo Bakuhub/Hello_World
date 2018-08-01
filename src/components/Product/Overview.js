@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
-import TagsBar from '../Widget/TagsBar'
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import {
@@ -10,7 +9,9 @@ import {
     Grid,
     IconButton,
     Input,
+    MenuItem,
     Paper,
+    Select,
     Table,
     TableBody,
     TableCell,
@@ -22,6 +23,7 @@ import {
     Tooltip,
     Typography
 } from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
 let counter = 0;
 
@@ -174,6 +176,7 @@ class EnhancedTable extends React.Component {
             order: 'asc',
             orderBy: 'calories',
             selected: [],
+            category: [],
             data: [
                 createData('Cupcake', 305, 3.7, 67, 4.3),
                 createData('Donut', 452, 25.0, 51, 4.9),
@@ -204,7 +207,11 @@ class EnhancedTable extends React.Component {
 
         this.setState({order, orderBy});
     };
+goDetail=(e,id)=>{
+    console.log(e)
+    console.log(id)
 
+}
     handleSelectAllClick = (event, checked) => {
         if (checked) {
             this.setState(state => ({selected: state.data.map(n => n.id)}));
@@ -215,6 +222,7 @@ class EnhancedTable extends React.Component {
 
     handleClick = (event, id) => {
         const {selected} = this.state;
+
         const selectedIndex = selected.indexOf(id);
         let newSelected = [];
 
@@ -265,27 +273,22 @@ class EnhancedTable extends React.Component {
                         <Grid item sm={5}>
                             <Grid container alignItems={'center'}>
                                 <Grid item sm={3}>
-                                    <Grid container alignItems={'center'} spacing={23}
-                                          className={'lighterBorder greyBackGround regHeight'}>
-                                        <Grid item sm={1}>
-                                            <div className={'icon-chart-16'} style={{fontSize: '12px'}}/>
-                                        </Grid>
+                                    <Select
 
-                                        <Grid item sm={1}/>
-                                        <Grid item sm={8}>
+                                    >
+                                        <MenuItem value="">
+                                            <em>None</em>
+                                        </MenuItem>
+                                        <MenuItem value={10}>Ten</MenuItem>
+                                        <MenuItem value={20}>Twenty</MenuItem>
+                                        <MenuItem value={30}>Thirty</MenuItem>
+                                    </Select>
 
-                                            <div  className={'BodyCopy Darker'}> Category</div>
-                                        </Grid>
-                                        <Grid item sm={1}/>
-                                        <Grid item sm={1}>
-                                            <div className={' icon-down-16'}
-
-                                                 style={{fontSize: '12px',color:'#321052'}}/>
-                                        </Grid></Grid></Grid>
+                                </Grid>
                                 <Grid item sm={7}>
                                     <Grid container alignItems={'center'}
                                           className={' whiteBackGround lighterBorder regHeight'}
-                                          >
+                                    >
                                         <Grid item sm={1}>
                                             <div className={' icon-search-16'} style={{}}/>
                                         </Grid>
@@ -293,7 +296,7 @@ class EnhancedTable extends React.Component {
 
                                             <Input placeholder={'Search Products...'}
                                                    disableUnderline={true}
-                                            className={'Thin'}
+                                                   className={'Thin'}
                                             />
                                         </Grid>
                                     </Grid>
@@ -310,9 +313,10 @@ class EnhancedTable extends React.Component {
                                         <Grid item sm={2}>
                                             <div className={' icon-add-16'} style={{fontSize: '14px'}}/>
                                         </Grid>
-                                        <Grid item sm ={1}/>
+                                        <Grid item sm={1}/>
                                         <Grid item sm={9}>
-                                            <div className={'Lighter SubHeading'}>Add Product</div>
+
+                                            <span className={'Lighter SubHeading'}>Add Product</span>
                                         </Grid>
                                     </Grid>
                                 </Grid>
@@ -324,7 +328,7 @@ class EnhancedTable extends React.Component {
 
                     <Paper className={classes.root}>
                         <EnhancedTableToolbar numSelected={selected.length}/>
-                        <div >
+                        <div>
                             <Table className={classes.table} aria-labelledby="tableTitle">
                                 <EnhancedTableHead
                                     numSelected={selected.length}
@@ -401,9 +405,9 @@ class EnhancedTable extends React.Component {
 
 
                                                     </TableCell>
-                                                    <TableCell numeric>
+                                                    <TableCell numeric onClick={e=>this.goDetail(e)}>
 
-                                                        <div className={' icon-more-16'}/>
+                                                        <Link to={'/products/p'} className={' icon-more-16'}/>
 
 
                                                     </TableCell>
