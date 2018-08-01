@@ -12,6 +12,7 @@ import LanguageSetting from './Details/LanguageSetting'
 import BackArrow from '../Widget/BackArrow'
 import Options from './Details/Options'
 import {Link} from 'react-router-dom'
+import StockLogs from './Details/StockLogs'
 
 import VariantCombinationTable from './Details/VariantCombinationTable'
 
@@ -166,8 +167,7 @@ class ProductEdit extends React.Component {
                                                       title={'Current Stock Level'}/>
                                         </Grid>
                                         <Grid item sm={2}>
-                                            <div> Stock Logs</div>
-
+                                         <StockLogs />
                                         </Grid>
                                         <Grid item sm={6}>
                                             <InputBar placeHolder={"Minimum stock lev el till warning"}

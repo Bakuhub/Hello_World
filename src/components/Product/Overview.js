@@ -24,7 +24,6 @@ import {
     Typography
 } from '@material-ui/core'
 import {Link} from 'react-router-dom'
-
 let counter = 0;
 
 function createData(name, calories, fat, carbs, protein) {
@@ -207,11 +206,11 @@ class EnhancedTable extends React.Component {
 
         this.setState({order, orderBy});
     };
-goDetail=(e,id)=>{
-    console.log(e)
-    console.log(id)
+    goDetail = (e, id) => {
+        console.log(e)
+        console.log(id)
 
-}
+    }
     handleSelectAllClick = (event, checked) => {
         if (checked) {
             this.setState(state => ({selected: state.data.map(n => n.id)}));
@@ -309,16 +308,19 @@ goDetail=(e,id)=>{
                             <Grid container alignItems={'center'}>
                                 <Grid item sm={4}/>
                                 <Grid item sm={8}>
-                                    <Grid container alignItems={'center'} className={'regHeight purpleButton '}>
-                                        <Grid item sm={2}>
-                                            <div className={' icon-add-16'} style={{fontSize: '14px'}}/>
-                                        </Grid>
-                                        <Grid item sm={1}/>
-                                        <Grid item sm={9}>
+                                    <Link to={'/products/new'}>
+                                        <Grid container alignItems={'center'} className={'regHeight purpleButton '}>
+                                            <Grid item sm={2}>
+                                                <div className={' icon-add-16'} style={{fontSize: '14px'}}/>
+                                            </Grid>
+                                            <Grid item sm={1}/>
+                                            <Grid item sm={9}>
 
-                                            <span className={'Lighter SubHeading'}>Add Product</span>
+                                                <span className={'Lighter SubHeading'}>Add Product</span>
+                                            </Grid>
                                         </Grid>
-                                    </Grid>
+                                    </Link>
+
                                 </Grid>
                             </Grid>
 
@@ -405,7 +407,7 @@ goDetail=(e,id)=>{
 
 
                                                     </TableCell>
-                                                    <TableCell numeric onClick={e=>this.goDetail(e)}>
+                                                    <TableCell numeric onClick={e => this.goDetail(e)}>
 
                                                         <Link to={'/products/p'} className={' icon-more-16'}/>
 
