@@ -94,7 +94,7 @@ class TagsBar extends React.Component {
     render() {
         const {classes} = this.props;
         return (
-            <Fragment>
+            <Fragment className={'TagsBar'}>
                 <div className={classes.title}>
                     {this.props.title}
                 </div>

@@ -15,14 +15,14 @@ const styles = theme => ({
         color: styleGuide.purpleText,
         paddingLeft: '10px',
         paddingRight: '10px',
-        boxShadow: 'inset 0 5px 1px -5px #000000'
+        boxShadow: 'inset 0 2px 2px 0px #ededed'
     },
     title: {
         color: styleGuide.lighterText,
-        fontSize: styleGuide.XL,
+        fontSize: styleGuide.L,
 
         fontWeight: 'lighter',
-        paddingBottom:styleGuide.M,
+        paddingBottom:styleGuide.S,
     }
 });
 

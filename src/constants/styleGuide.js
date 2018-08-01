@@ -8,13 +8,13 @@ export const XXXL = '28px'
 export const XXL = '18px'
 export const XL = '16px'
 export const L = '14px'
-export const M = '12px'
-export const S = '10px'
+export const M = '10px'
+export const S = '5px'
 export const XS = '8px'
 export const formBlock = {
-    boxShadow: '-2px 2px 0px 0px' + greyPaperShadow,
-    borderRadius: '5px',
-    border: '1px solid #E8E4ED',
+    boxShadow: '-7px 8px 16px 0px' + greyPaperShadow,
+    borderRadius: '4px',
+    backgroundColor: 'white',
     padding: '30px 30px 50px 30px'
 }
 export const shopListItem ={

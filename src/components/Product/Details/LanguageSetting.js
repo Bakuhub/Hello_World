@@ -10,22 +10,22 @@ const drawerWidth = 235;
 const shops = [{
 
     id: 1,
-    name: "test1"
+    name: "English"
 
 }, {
 
     id: 1,
-    name: "test2"
+    name: "Cantonesse"
 
 }, {
 
     id: 1,
-    name: "test3"
+    name: "Mandarin"
 
 }, {
 
     id: 1,
-    name: "test4"
+    name: "Other_Tests"
 
 }]
 const styles = theme => ({
@@ -55,12 +55,14 @@ const styles = theme => ({
 
     },
     normalList: {
-        padding: '10px',
+        padding: '10px 0px',
         fontSize: '14px',
-        marginLeft: '10px',
     },
     icon: {
-        fontSize: '20px'
+        fontSize: '18px'
+    },
+    specialIcon: {
+        fontSize: '180px'
     },
     shopListItem: {
         height: '20px',
@@ -92,16 +94,12 @@ class LanguageSetting extends React.Component {
                     <ListItem className={classes.normalList} key={i}>
                         <Grid container alignItems={'center'}>
 
-                            <Grid item sm={2}>
-                                <div className={'icon-chat-16'}/>
-                            </Grid>
-                            <Grid item sm={9}>
-
-                                <div>{shop.name}
-                                </div>
+                            <Grid item sm={11}>
+                                <span className={classes.specialIcon+ ' ' +'icon-chat-16'}/>
+                                <span>{shop.name}</span>
                             </Grid>
                             <Grid item sm={1}>
-                                <div className={'icon-remove-16'} style={{fontSize: '12px'}}/>
+                                <div className={'icon-remove-16'} style={{fontSize: '10px'}}/>
                             </Grid>
 
                         </Grid>
@@ -109,10 +107,10 @@ class LanguageSetting extends React.Component {
                     </ListItem>
                 )}
                 <ListItem button>
-                    <div className={'icon-add-16'} style={{color: 'red'}}/>
-                    <div>
+                    <span className={'icon-add-16'}/>
+                    <span>
                         Add product language
-                    </div>
+                    </span>
                 </ListItem>
             </List>)
 

@@ -6,6 +6,7 @@
 *{
     font-family:ocs;
     color: #3f3D52;
+    font-size: 14px;
 }
 
 .Display4{
@@ -88,11 +89,13 @@ body{ margin:0px; padding: 0px; border: 0px;}
     display: flex;
     flex:1;
     flex-direction: column;
+    background: #F5F7F7;
 }
 
 /* This is the top nav area */
 .navigation{
     height: 60px;
+    background: white;
 }
 
 /* This is the content */
@@ -146,3 +149,16 @@ body{ margin:0px; padding: 0px; border: 0px;}
     font-weight:lighter;
 
 }
+
+/*VON INPUTS*/
+.container{
+    margin: 0px auto;
+    max-width: 1200px;
+    width: 100%;
+}
+/*VON END*/
+
+
+
+
+

@@ -61,7 +61,7 @@ class ProductEdit extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Grid container className={classes.root}>
+            <Grid container className={'container' +' '+ classes.root}>
 
                 <Grid item sm={12}>
                     <Grid container spacing={40}>
@@ -118,9 +118,6 @@ class ProductEdit extends React.Component {
                                     <Grid container spacing={16} className={classes.form}>
                                         <Grid item sm={12}>
                                             <FormTitle title={'Language Setting'}/>
-                                        </Grid>
-
-                                        <Grid item sm={12}>
                                             <LanguageSetting/>
                                         </Grid>
                                     </Grid>
