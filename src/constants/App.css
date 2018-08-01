@@ -156,6 +156,44 @@ body{ margin:0px; padding: 0px; border: 0px;}
     max-width: 1200px;
     width: 100%;
 }
+
+/* Styles applied only for Edit.js Page */
+/* Change color of the 'x' icon in language list */
+.ProductEdit-root-189 .LanguageSetting-textIconColor-213.icon-add-16:before{
+    color:#905CC4;
+}
+
+/* hide the dropdown form controls inside the "Variant Options" list */
+.ProductEdit-root-189 .css-1wy0on6{
+    display: none;
+}
+
+/* Variant Options List */
+/* container of the tag */
+.ProductEdit-root-189 .css-1ns25le{
+    box-shadow: inset 0 2px 2px 0px #ededed;
+    background-color: #F5F5F7;
+    border: 1px solid #E1E0EB;
+    min-height: 80px;
+    display: flex;
+    align-items: start;
+    padding-top: 8px;
+}
+/* body of tag tag */
+.ProductEdit-root-189 .css-1rtrksz >div{
+    background-color: #ffffff !important;
+    border: 1px solid #efefef;
+}
+/* text of the tag */
+.ProductEdit-root-189 .css-1rtrksz >div>div:first-child{
+    color: #311052 !important;
+    font-size: 14px;
+    font-weight: 700;
+}
+/* icon (x) of the tag */
+.ProductEdit-root-189 .css-1rtrksz >div>div:nth-child(2) svg path{
+    color: #905CC4 !important;
+}
 /*VON END*/
 
 

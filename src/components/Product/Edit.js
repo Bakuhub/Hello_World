@@ -195,14 +195,12 @@ class ProductEdit extends React.Component {
                                 </Grid>
                                 <Grid item>
                                     <Grid container alignItems={'stretch'} spacing={16} className={classes.form}>
-                                        <Grid item sm={10}>
+                                        <Grid item sm={12}>
                                             <FormTitle title={'Product Options'}/>
-                                        </Grid>
-                                        <Grid item sm={2}>
+                                            
                                             <FormControlLabel
                                                 control={
                                                     <Switch
-
                                                         checked={this.state.checkedB}
                                                         onChange={this.productOptionSwitch()}
                                                         value="checkedB"

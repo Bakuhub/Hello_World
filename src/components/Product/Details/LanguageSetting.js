@@ -58,11 +58,19 @@ const styles = theme => ({
         padding: '10px 0px',
         fontSize: '14px',
     },
+    listContainer: {
+        display: 'flex',
+        'align-items': 'center',
+    },
     icon: {
         fontSize: '18px'
     },
-    specialIcon: {
-        fontSize: '180px'
+    iconLanguageTbl: {
+        fontSize: '18px',
+        marginRight: '5px',
+    },
+    textIconColor:{
+        color:'#905CC4',
     },
     shopListItem: {
         height: '20px',
@@ -92,13 +100,13 @@ class LanguageSetting extends React.Component {
             <List>
                 {shops.map((shop, i) =>
                     <ListItem className={classes.normalList} key={i}>
-                        <Grid container alignItems={'center'}>
+                        <Grid container>
 
-                            <Grid item sm={11}>
-                                <span className={classes.specialIcon+ ' ' +'icon-chat-16'}/>
+                            <Grid item sm={11} className={classes.listContainer}>
+                                <span className={classes.iconLanguageTbl+ ' ' +'icon-chat-16'}/>
                                 <span>{shop.name}</span>
                             </Grid>
-                            <Grid item sm={1}>
+                            <Grid item sm={1} className={classes.listContainer}>
                                 <div className={'icon-remove-16'} style={{fontSize: '10px'}}/>
                             </Grid>
 
@@ -106,11 +114,9 @@ class LanguageSetting extends React.Component {
 
                     </ListItem>
                 )}
-                <ListItem button>
-                    <span className={'icon-add-16'}/>
-                    <span>
-                        Add product language
-                    </span>
+                <ListItem className={classes.normalList} button>
+                    <span className={classes.iconLanguageTbl+ ' ' +'icon-add-16'+ ' ' +classes.textIconColor}/>
+                    <span className={classes.textIconColor}>Add product language</span>
                 </ListItem>
             </List>)
 
