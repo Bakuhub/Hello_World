@@ -7,11 +7,14 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import {Grid,ListItem,Typography} from '@material-ui/core'
+import {Link} from 'react-router-dom'
+import * as styleGuide from '../../../constants/styleGuide'
 
 const CustomTableCell = withStyles(theme => ({
     head: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
+        backgroundColor: styleGuide.greyInputBackGround,
+        color: styleGuide.purpleText,
     },
     body: {
         fontSize: 14,
@@ -25,7 +28,6 @@ const styles = theme => ({
         overflowX: 'auto',
     },
     table: {
-        minWidth: 700,
     },
     row: {
         '&:nth-of-type(odd)': {
@@ -56,11 +58,11 @@ function CustomizedTable(props) {
             <Table className={classes.table}>
                 <TableHead>
                     <TableRow>
-                        <CustomTableCell>Dessert (100g serving)</CustomTableCell>
-                        <CustomTableCell numeric>Calories</CustomTableCell>
-                        <CustomTableCell numeric>Fat (g)</CustomTableCell>
-                        <CustomTableCell numeric>Carbs (g)</CustomTableCell>
-                        <CustomTableCell numeric>Protein (g)</CustomTableCell>
+                        <CustomTableCell>color</CustomTableCell>
+                        <CustomTableCell numeric>size</CustomTableCell>
+                        <CustomTableCell numeric>SKU</CustomTableCell>
+                        <CustomTableCell numeric>price</CustomTableCell>
+                        <CustomTableCell numeric> </CustomTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -70,10 +72,25 @@ function CustomizedTable(props) {
                                 <CustomTableCell component="th" scope="row">
                                     {n.name}
                                 </CustomTableCell>
-                                <CustomTableCell numeric>{n.calories}</CustomTableCell>
-                                <CustomTableCell numeric>{n.fat}</CustomTableCell>
-                                <CustomTableCell numeric>{n.carbs}</CustomTableCell>
-                                <CustomTableCell numeric>{n.protein}</CustomTableCell>
+                                <CustomTableCell numeric>
+                                    {n.calories}
+                                    </CustomTableCell>
+                                <CustomTableCell numeric>
+                                    {n.fat}
+                                    </CustomTableCell>
+                                <CustomTableCell numeric>
+                                    {n.carbs}
+                                    </CustomTableCell>
+                                <CustomTableCell numeric>
+
+                                    <ListItem button>
+                                        <span className={'icon-view-16'}/>
+                                        <Typography component={Link} to={'/products/g/g'}>
+                                            Manage Variant
+                                        </Typography>
+                                    </ListItem>
+
+                                    </CustomTableCell>
                             </TableRow>
                         );
                     })}

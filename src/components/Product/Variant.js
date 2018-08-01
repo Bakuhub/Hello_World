@@ -64,7 +64,7 @@ class Variant extends React.Component {
                             <Grid item sm={12}>
 
                                 <BackArrow title={'back to product list'}
-                                link ={'/product/g' }/>
+                                link ={'/products/g' }/>
 
 
                             </Grid>
