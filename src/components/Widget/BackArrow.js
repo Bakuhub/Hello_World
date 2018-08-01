@@ -10,9 +10,9 @@ const styles = theme => ({
         fontWeight: 'bold',
         color: styleGuide.lighterText,
     },
-    icon:{
-compose: 'icon-left-16',
-            color:"red",
+    icon: {
+        compose: 'icon-left-16',
+        color: "red",
     }
 });
 
@@ -32,12 +32,14 @@ class BackArrow extends React.Component {
             <Grid container alignItems={'center'}>
                 <Grid item>
 
-                    <span className={classes.icon}/>
+                    <span className={'icon-left-16'} style={{fontSize: '10px'}}/>
                     <span className={classes.backArrow}>
-                        {this.props.title}
+                     &nbsp;   {this.props.title}
                     </span>
-
+                    <br/>
+                    <br/>
                 </Grid>
+
             </Grid>
         );
     }

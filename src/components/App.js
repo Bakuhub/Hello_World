@@ -14,13 +14,11 @@ import Settings from '../components/Settings';
 import {store} from '../store';
 import {push} from 'react-router-redux';
 import EnhancedTable from './Product/Overview'
+import ProductOverview from './Product/Overview'
 import PermanentDrawer from './Layout/SideBar'
 import '../constants/App.css'
 import '../constants/icon/Icon.css'
-import InputBar from './Widget/InputBar'
 import Header from './Layout/Header'
-import ProductOverview from './Product/Overview'
-import TagsBar from './Widget/TagsBar'
 import ProductEdit from './Product/Edit'
 
 const mapStateToProps = state => {
@@ -90,8 +88,8 @@ class App extends React.Component {
                                 <Route path="/@:username/favorites" component={ProfileFavorites}/>
                                 <Route path="/@:username" component={Profile}/>
                                 <Route path='/test' component={EnhancedTable}/>
-                                <Route path='/products' component = {ProductOverview} />
-                                <Route path='/products/:id' component ={ProductEdit}  />
+                                <Route exact path='/products' component={ProductOverview}/>
+                                <Route path='/products/:id' component={ProductEdit}/>
                             </Switch>
                         </div>
                     </div>

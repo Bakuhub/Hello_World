@@ -10,6 +10,8 @@ import PairCancelButton from '../Widget/PairCancelButton'
 import DragDropZone from '../Widget/DragDropZone'
 import LanguageSetting from './Details/LanguageSetting'
 import BackArrow from '../Widget/BackArrow'
+import TagsBar from '../Widget/TagsBar'
+import Options from './Details/Options'
 import OptionBar from '../Widget/OptionBar'
 const styles = theme => ({
     root: {
@@ -38,9 +40,7 @@ class ProductEdit extends React.Component {
         super()
         this.state = {
             placeHolder: '',
-            isProductOptionsShow: {
-                display: 'none'
-            }
+            isProductOptionsShow: false
 
         }
     }
@@ -48,9 +48,14 @@ class ProductEdit extends React.Component {
     handleChange = name => event => {
         this.setState({
             [name]: event.target.value,
-
         });
+        console.log(this.state)
     };
+    productOptionSwitch = () => event => {
+        this.setState({
+            isProductOptionsShow: !this.state.isProductOptionsShow
+        });
+    }
 
 
     render() {
@@ -64,8 +69,7 @@ class ProductEdit extends React.Component {
                         <Grid container className={classes.title}>
                             <Grid item sm={12}>
 
-<BackArrow title={'back to product list'}/>
-
+                                <BackArrow title={'back to product list'}/>
 
 
                             </Grid>
@@ -203,34 +207,20 @@ class ProductEdit extends React.Component {
                                                     <Switch
 
                                                         checked={this.state.checkedB}
-                                                        onChange={this.handleChange('checkedB')}
+                                                        onChange={this.productOptionSwitch()}
                                                         value="checkedB"
                                                     />
                                                 }
                                             />
                                         </Grid>
-                                        {this.props.isProductOptionsShow !== 'none' && (
-                                            <Fragment>
-                                                <Grid item sm={12}>
-                                                    <InputBar placeHolder={"display name"} title={'Name'}/>
-                                                </Grid>
-                                                < Grid item sm={12}>
-                                                    <InputBar placeHolder={"Type some description..."}
-                                                              title={'Description'}/>
-                                                </Grid>
-                                                <Grid item sm={12}>
-                                                    <Grid container spacing={40}>
-                                                        <Grid item sm={6}>
-                                                            <InputBar placeHolder={""}
-                                                                      title={'Price(default for variants)'}/>
-                                                        </Grid>
-                                                        <Grid item sm={6}>
-                                                            <InputBar placeHolder={"Product Category"}
-                                                                      title={'Product Category'}/>
-                                                        </Grid>
-                                                    </Grid>
-                                                </Grid>
-                                            </Fragment>
+                                        {this.state.isProductOptionsShow === true && (
+                                            <Grid container alignItems={'center'} spacing={40}>
+                                                <Options/>
+                                                <Options/>
+                                                <Options/>
+                                                <Options/>
+                                                <Options/>
+                                            </Grid>
                                         )}
                                     </Grid>
                                 </Grid>
