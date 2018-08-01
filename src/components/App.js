@@ -20,6 +20,7 @@ import '../constants/App.css'
 import '../constants/icon/Icon.css'
 import Header from './Layout/Header'
 import ProductEdit from './Product/Edit'
+import VariantProduct from './Product/Variant'
 
 const mapStateToProps = state => {
     return {
@@ -89,7 +90,8 @@ class App extends React.Component {
                                 <Route path="/@:username" component={Profile}/>
                                 <Route path='/test' component={EnhancedTable}/>
                                 <Route exact path='/products' component={ProductOverview}/>
-                                <Route path='/products/:id' component={ProductEdit}/>
+                                <Route exact path='/products/:id' component={ProductEdit}/>
+                                <Route exact path='/products/:id/:type' component={VariantProduct}/>
                             </Switch>
                         </div>
                     </div>

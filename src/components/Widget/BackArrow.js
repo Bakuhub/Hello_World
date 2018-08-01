@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import * as  styleGuide from '../../constants/styleGuide'
-import {Grid} from '@material-ui/core'
+import {Grid,ListItem} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
 const styles = theme => ({
+    root:{
+margin:0,
+        padding:'5px 0px',
+        width:'150px'
+    },
     backArrow: {
         fontSize: styleGuide.M,
         fontWeight: 'bold',
@@ -21,7 +27,8 @@ class BackArrow extends React.Component {
     constructor() {
         super()
         this.state = {
-            title: ''
+            title: '',
+            link:''
         }
     }
 
@@ -29,18 +36,16 @@ class BackArrow extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Grid container alignItems={'center'}>
-                <Grid item>
-
+                <Fragment>
+                    <ListItem button component={Link} to={this.props.link} className={classes.root}>
                     <span className={'icon-left-16'} style={{fontSize: '10px'}}/>
                     <span className={classes.backArrow}>
                      &nbsp;   {this.props.title}
-                    </span>
+                    </span></ListItem>
                     <br/>
                     <br/>
-                </Grid>
+                </Fragment>
 
-            </Grid>
         );
     }
 }

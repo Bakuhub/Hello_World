@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import * as styleGuide from '../../constants/styleGuide'
 import {Grid, ListItem} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
 const styles = theme => ({
     cancel: {
@@ -39,7 +40,9 @@ class PairCancelButton extends React.Component {
     constructor() {
         super()
         this.state = {
-            action: ''
+            action: '',
+            cancelLink:'',
+            actionLink:''
         }
     }
 
@@ -49,12 +52,12 @@ class PairCancelButton extends React.Component {
         return (
             <Grid container alignItems={'center'}>
                 <Grid item sm={4}>
-                    <ListItem button className={classes.cancel}>
+                    <ListItem button className={classes.cancel} component={Link} to={this.props.cancelLink} >
                         Cancel
                     </ListItem>
                 </Grid>
                 <Grid item sm={8}>
-                    <ListItem button className={classes.action}>
+                    <ListItem button className={classes.action} component={Link} to={this.props.actionLink}>
                         {this.props.action}
                     </ListItem>
                 </Grid>

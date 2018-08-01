@@ -13,6 +13,9 @@ import BackArrow from '../Widget/BackArrow'
 import TagsBar from '../Widget/TagsBar'
 import Options from './Details/Options'
 import OptionBar from '../Widget/OptionBar'
+import {Link} from 'react-router-dom'
+import VariantCombinationTable from './Details/VariantCombinationTable'
+
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -27,11 +30,7 @@ const styles = theme => ({
     childInput: {
         padding: '60px'
     },
-    shopListItem: {
-        height: '100%',
-        width: '100%',
-        marginTop: '5px',
-    }
+    shopListItem:styleGuide.shopListItem
 
 });
 
@@ -69,7 +68,7 @@ class ProductEdit extends React.Component {
                         <Grid container className={classes.title}>
                             <Grid item sm={12}>
 
-                                <BackArrow title={'back to product list'}/>
+                                <BackArrow title={'back to product list'} link={'/products'}/>
 
 
                             </Grid>
@@ -79,7 +78,8 @@ class ProductEdit extends React.Component {
                             <Grid item sm={5}/>
                             <Grid item sm={3} className={classes.saveCancelButton}>
                                 <PairCancelButton action={'Save Changes'}
-
+                                    cancelLink = {'/products'}
+                                                  actionLink={'/products'}
                                 />
                             </Grid>
                         </Grid>

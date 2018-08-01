@@ -261,9 +261,6 @@ class EnhancedTable extends React.Component {
                 </Grid>
                 <br/>
                 <Grid item>
-                    <TagsBar/>
-                </Grid>
-                <Grid item>
                     <Grid container alignItems={'center'}>
                         <Grid item sm={5}>
                             <Grid container alignItems={'center'}>

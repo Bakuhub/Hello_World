@@ -17,4 +17,9 @@ export const formBlock = {
     border: '1px solid #E8E4ED',
     padding: '30px 30px 50px 30px'
 }
+export const shopListItem ={
+    height: '100%',
+    width: '100%',
+    marginTop: '5px',
+}
 
