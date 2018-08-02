@@ -22,6 +22,8 @@ import Header from './Layout/Header'
 import ProductEdit from './Product/Edit'
 import VariantProduct from './Product/Variant'
 import FeedsOverview from './Feeds/Overview'
+import FeedsEdit from './Feeds/Edit'
+import SectionEdit from './Feeds/Variant'
 const mapStateToProps = state => {
     return {
         appLoaded: state.common.appLoaded,
@@ -95,6 +97,11 @@ class App extends React.Component {
 
 
                                 <Route exact path='/feeds' component={FeedsOverview}/>
+                                <Route exact path='/feeds/:blog' component={FeedsEdit}/>
+                                <Route exact path='/feeds/:blog/:section' component={SectionEdit}/>
+
+
+
 
                                 <Route exact path='/products' component={ProductOverview}/>
                                 <Route exact path='/products/:id' component={ProductEdit}/>

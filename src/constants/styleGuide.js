@@ -14,9 +14,10 @@ export const XS = '8px'
 export const formBlock = {
     boxShadow: '-2px 2px 0px 0px' + greyPaperShadow,
     borderRadius: '5px',
-    border: '1px solid #E8E4ED',
+    border: regBorder,
     padding: '30px 30px 50px 30px'
 }
+export const regBorder='1px solid #E8E4ED'
 export const shopListItem ={
     height: '100%',
     width: '100%',

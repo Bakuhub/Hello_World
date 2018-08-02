@@ -1,18 +1,14 @@
 import PropTypes from "prop-types";
 import React from 'react'
-import {Checkbox, FormControlLabel,Divider, Grid, ListItem,Switch} from '@material-ui/core'
-import FormTitle from '../Widget/FormTitle'
+import {Divider, Grid} from '@material-ui/core'
 import {withStyles} from '@material-ui/core/styles';
-import InputBar from '../Widget/InputBar'
 import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
-import PairCancelButton from '../Widget/PairCancelButton'
-import DragDropZone from '../Widget/DragDropZone'
-import BackArrow from '../Widget/BackArrow'
 import SearchBar from '../Widget/SearchBar'
 import DatePicker from '../Widget/DatePicker'
 import BlogsCol from './Blogs/Overview'
 import {Link} from 'react-router-dom'
+
 
 const styles = theme => ({
     root: {
@@ -44,33 +40,75 @@ class FeedsOverview extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Grid container  className={classes.root}>
+            <Grid container className={classes.root}>
                 <Grid item sm={12}>
                     <SubTitle title={'Blog Feed'}/></Grid>
                 <Grid item sm={2}>
-                <DatePicker placeHolder={'Mar10- Apr20'}/>
+                    <Grid
+
+                        container alignItems={'center'}
+                        className={' whiteBackGround lighterBorder regHeight'}
+                    >
+                        <Grid item sm={2}>
+                            <div className={' icon-calendar-16'}/>
+                        </Grid>
+                        <Grid item sm={10}>
+                            <div>
+                                Mar 10   -   Apr 30
+                            </div>
+                        </Grid>
+
+                    </Grid>
                 </Grid>
-                <Grid item sm ={4}>
-                    <SearchBar placeHolder={'Search Blogs'} />
+                <Grid item sm={1}>
+                    <Grid
+
+                        container alignItems={'center'}
+                          className={' whiteBackGround lighterBorder regHeight'}
+                    >
+                        <Grid item sm={3}>
+                            <div className={' icon-filter-16'}/>
+                        </Grid>
+                        <Grid item sm={6}>
+                            <div>&nbsp;&nbsp; All
+                            </div>
+                        </Grid>
+                        <Grid item sm={3}>
+                            <div className={' icon-down-16'}/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item sm={3}>
+                    <SearchBar placeHolder={'Search Blogs'}/>
                 </Grid>
                 <Grid item sm={4}/>
                 <Grid item sm={2}>
-                    <ListItem button>
-                        Add Blogs
-                    </ListItem>
+                    <Link to={'/feeds/new'}>
+                        <Grid container alignItems={'center'} justify={'center'} className={'regHeight purpleButton '}>
+                            <Grid item>
+                                <div className={' icon-add-16'} style={{fontSize: '14px'}}/>
+                            </Grid>
+                            <Grid item>
+                                <span className={'Lighter SubHeading'}>&nbsp;Create Blog Post</span>
+                            </Grid>
+                        </Grid>
+                    </Link>
                 </Grid>
                 <Grid item sm={12}>
-                <Divider/>
+                    <Divider/>
                 </Grid>
                 <Grid item sm={12}>
                     <Grid container alignItems={'center'} justify={'center'}>
                         <Grid item>
                             <BlogsCol/>
-                        </Grid>       <Grid item>
+                        </Grid>
+                        <Grid item>
                             <BlogsCol/>
-                        </Grid>       <Grid item>
+                        </Grid>
+                        <Grid item>
                             <BlogsCol/>
-                        </Grid>       <Grid item>
+                        </Grid>
+                        <Grid item>
                             <BlogsCol/>
                         </Grid>
                     </Grid>
@@ -80,7 +118,7 @@ class FeedsOverview extends React.Component {
     }
 }
 
-    FeedsOverview.propTypes = {
+FeedsOverview.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
