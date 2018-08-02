@@ -5,7 +5,7 @@ import Select from 'react-select';
 import {withStyles} from "@material-ui/core/styles/index";
 import PropTypes from "prop-types";
 
-
+import CreatableSelect from 'react-select/lib/Creatable';
 const styles = theme => ({
     inputBar: {
         backgroundColor: styleGuide.greyInputBackGround,
@@ -98,14 +98,10 @@ class TagsBar extends React.Component {
                 <div className={classes.title}>
                     {this.props.title}
                 </div>
-                <Select
-                    closeMenuOnSelect={false}
-                    defaultValue={[colourOptions[0]]}
+                <CreatableSelect
                     isMulti
+                    onChange={this.handleChange}
                     options={colourOptions}
-                    classes={classes.inputBar}
-                    styles={colourStyles}
-
                 />
             </Fragment>
 
