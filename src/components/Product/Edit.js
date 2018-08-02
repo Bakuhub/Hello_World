@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from 'react'
-import {Checkbox, FormControlLabel, Grid, Switch} from '@material-ui/core'
+import {Checkbox, FormControlLabel, Grid, ListItem,Switch} from '@material-ui/core'
 import FormTitle from '../Widget/FormTitle'
 import {withStyles} from '@material-ui/core/styles';
 import InputBar from '../Widget/InputBar'
@@ -39,8 +39,18 @@ class ProductEdit extends React.Component {
         super()
         this.state = {
             placeHolder: '',
-            isProductOptionsShow: false
-
+            isProductOptionsShow: false,
+            numOfProductVariant:[{
+                product1:[]
+            },{
+                product1:[]
+            },{
+                product1:[]
+            },{
+                product1:[]
+            },{
+                product1:[]
+            },]
         }
     }
 
@@ -48,7 +58,6 @@ class ProductEdit extends React.Component {
         this.setState({
             [name]: event.target.value,
         });
-        console.log(this.state)
     };
     productOptionSwitch = () => event => {
         this.setState({
@@ -56,7 +65,18 @@ class ProductEdit extends React.Component {
         });
     }
 
+    addProductVariant =() => event => {
+        let temp = this.state.numOfProductVariant
+        this.setState(
+            {
+                numOfProductVariant: temp.push({
+                    variantName:[]
+                })
+            }
 
+        )
+        console.log(this.state.numOfProductVariant)
+    }
     render() {
         const {classes} = this.props;
 
@@ -213,12 +233,16 @@ class ProductEdit extends React.Component {
                                             />
                                         </Grid>
                                         {this.state.isProductOptionsShow === true && (
+
                                             <Grid container alignItems={'center'} spacing={40}>
-                                                <Options/>
-                                                <Options/>
-                                                <Options/>
-                                                <Options/>
-                                                <Options/>
+
+                                                        <Options/>
+                                                        <Options/>
+                                                <ListItem button
+                                                onClick = {this.addProductVariant}>
+                                                    <span className={'icon-add-16'}/>
+                                                    <span>Add a Product Variant</span>
+                                                </ListItem>
                                             </Grid>
                                         )}
                                     </Grid>

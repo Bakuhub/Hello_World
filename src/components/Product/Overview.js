@@ -24,6 +24,7 @@ import {
     Typography
 } from '@material-ui/core'
 import {Link} from 'react-router-dom'
+import SearchBar from '../Widget/SearchBar'
 let counter = 0;
 
 function createData(name, calories, fat, carbs, protein) {
@@ -285,20 +286,10 @@ class EnhancedTable extends React.Component {
 
                                 </Grid>
                                 <Grid item sm={7}>
-                                    <Grid container alignItems={'center'}
-                                          className={' whiteBackGround lighterBorder regHeight'}
-                                    >
-                                        <Grid item sm={1}>
-                                            <div className={' icon-search-16'} style={{}}/>
-                                        </Grid>
-                                        <Grid item sm={10}>
 
-                                            <Input placeholder={'Search Products...'}
-                                                   disableUnderline={true}
-                                                   className={'Thin'}
-                                            />
-                                        </Grid>
-                                    </Grid>
+
+
+                                    <SearchBar placeHolder={'search products...'}/>
                                 </Grid>
                             </Grid>
                         </Grid>

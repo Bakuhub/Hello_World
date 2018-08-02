@@ -21,7 +21,7 @@ import '../constants/icon/Icon.css'
 import Header from './Layout/Header'
 import ProductEdit from './Product/Edit'
 import VariantProduct from './Product/Variant'
-
+import FeedsOverview from './Feeds/Overview'
 const mapStateToProps = state => {
     return {
         appLoaded: state.common.appLoaded,
@@ -90,6 +90,12 @@ class App extends React.Component {
                                 <Route path="/@:username/favorites" component={ProfileFavorites}/>
                                 <Route path="/@:username" component={Profile}/>
                                 <Route path='/test' component={EnhancedTable}/>
+
+
+
+
+                                <Route exact path='/feeds' component={FeedsOverview}/>
+
                                 <Route exact path='/products' component={ProductOverview}/>
                                 <Route exact path='/products/:id' component={ProductEdit}/>
                                 <Route exact path='/products/:id/:type' component={VariantProduct}/>

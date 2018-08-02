@@ -108,7 +108,7 @@ class PermanentDrawer extends React.Component {
                              style={{fontSize: "12px"}}>General
                         </div>
                     </ListItem>
-                    <ListItem button component={Link} to={'/products'} className={classes.nestedList}>
+                    <ListItem button component={Link} to={'/feeds'} className={classes.nestedList}>
                         <Grid container
                               alignItems={'center'}
                         >
@@ -148,6 +148,7 @@ class PermanentDrawer extends React.Component {
                         </Grid>
 
                     </ListItem>
+
                     <ListItem button className={classes.nestedList}>
                         <Grid container alignItems={'center'}>
                             <Grid item sm={2}>
