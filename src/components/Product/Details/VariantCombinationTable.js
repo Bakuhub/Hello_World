@@ -58,8 +58,7 @@ function CustomizedTable(props) {
             <Table className={classes.table}>
                 <TableHead>
                     <TableRow>
-                        <CustomTableCell>color</CustomTableCell>
-                        <CustomTableCell numeric>size</CustomTableCell>
+                        <CustomTableCell>color | size</CustomTableCell>
                         <CustomTableCell numeric>SKU</CustomTableCell>
                         <CustomTableCell numeric>price</CustomTableCell>
                         <CustomTableCell numeric> </CustomTableCell>
@@ -70,22 +69,21 @@ function CustomizedTable(props) {
                         return (
                             <TableRow className={classes.row} key={n.id}>
                                 <CustomTableCell component="th" scope="row">
-                                    {n.name}
+                                    {
+                                        n.name+' | '+n.calories
+                                    }
                                 </CustomTableCell>
-                                <CustomTableCell numeric>
-                                    {n.calories}
-                                    </CustomTableCell>
-                                <CustomTableCell numeric>
+                                <CustomTableCell numeric contenteditable="true">
                                     {n.fat}
-                                    </CustomTableCell>
-                                <CustomTableCell numeric>
+                                    </CustomTableCell >
+                                <CustomTableCell numeric contenteditable="true">
                                     {n.carbs}
                                     </CustomTableCell>
-                                <CustomTableCell numeric>
+                                <CustomTableCell numeric  contenteditable="true">
 
                                     <ListItem button>
                                         <span className={'icon-view-16'}/>
-                                        <Typography component={Link} to={'/products/g/g'}>
+                                        <Typography component={Link} to={'/products/productId/variantid'}>
                                             Manage Variant
                                         </Typography>
                                     </ListItem>

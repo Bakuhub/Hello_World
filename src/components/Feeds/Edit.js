@@ -7,7 +7,7 @@ import BlogSection from './Blogs/Sections/Overview'
 import * as styleGuide from "../../constants/styleGuide";
 import {withStyles} from '@material-ui/core/styles';
 import PropTypes from "prop-types";
-
+import PurpleButton from '../Widget/PurpleButton'
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -59,20 +59,18 @@ class FeedsEdit extends React.Component {
         return (
             <Grid container alignItems={'center'} className={classes.root}>
                 <Grid item sm={12}>
-
                     <BackArrow title={'back to blog list'} link={'/feeds'}/>
-
-
                 </Grid>
                 <Grid item sm={9}>
                     <SubTitle title={'Create a blog post'}/></Grid>
                 <Grid item sm={3}>
                     <Grid container spacing={16} alignItems={'center'}>
                         <Grid item>
-                            <ListItem button to={'/feeds/new'} className={classes.purpleButton}>
-                                <span className={'icon-view-16'}/>
-                                <span style={{color: 'white'}}> Preview Post</span>
-                            </ListItem>
+                        <PurpleButton
+                        link={'/feeds/new'}
+                        icon={'icon-view-16'}
+value={'preview post'}
+                        />
                         </Grid>
                         <Grid item>
                             <ListItem button to={'/feeds/new'} className={classes.whiteButton}>

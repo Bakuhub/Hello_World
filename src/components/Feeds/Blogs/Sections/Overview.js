@@ -49,12 +49,12 @@ class FeedsEdit extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Grid container alignItems={'stretch'} spacing={24} className={classes.root}>
+            <Grid container alignItems={'stretch'}  className={classes.root}>
                 <Grid item sm={9}>
-                    <div
-                        contenteditable="true"
-                    >
+                    <div contenteditable="true">
                         please enter your contents here...
+
+
                     </div>
                 </Grid>
                 <Grid item sm={3}>

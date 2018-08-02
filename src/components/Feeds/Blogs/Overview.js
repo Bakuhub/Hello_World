@@ -40,7 +40,6 @@ class BlogsCol extends React.Component {
     constructor() {
         super()
         this.state = {
-            placeHolder: '',
 
 
         }

@@ -25,6 +25,7 @@ import {
 } from '@material-ui/core'
 import {Link} from 'react-router-dom'
 import SearchBar from '../Widget/SearchBar'
+import PurpleButton from '../Widget/PurpleButton'
 let counter = 0;
 
 function createData(name, calories, fat, carbs, protein) {
@@ -288,7 +289,6 @@ class EnhancedTable extends React.Component {
                                 <Grid item sm={7}>
 
 
-
                                     <SearchBar placeHolder={'search products...'}/>
                                 </Grid>
                             </Grid>
@@ -299,19 +299,15 @@ class EnhancedTable extends React.Component {
                             <Grid container alignItems={'center'}>
                                 <Grid item sm={4}/>
                                 <Grid item sm={8}>
-                                    <Link to={'/products/new'}>
-                                        <Grid container alignItems={'center'} className={'regHeight purpleButton '}>
-                                            <Grid item sm={2}>
-                                                <div className={' icon-add-16'} style={{fontSize: '14px'}}/>
-                                            </Grid>
-                                            <Grid item sm={1}/>
-                                            <Grid item sm={9}>
 
-                                                <span className={'Lighter SubHeading'}>Add Product</span>
-                                            </Grid>
-                                        </Grid>
-                                    </Link>
+<PurpleButton
+link={'/products/new'}
+value={'Add Product'}
+icon={'icon-add-16'}
 
+
+
+/>
                                 </Grid>
                             </Grid>
 
