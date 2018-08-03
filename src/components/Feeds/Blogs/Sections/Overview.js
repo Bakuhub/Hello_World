@@ -3,7 +3,7 @@ import {Divider, Grid, ListItem} from '@material-ui/core'
 import {withStyles} from '@material-ui/core/styles';
 import PropTypes from "prop-types";
 import {Link} from 'react-router-dom'
-
+import WhiteButton from '../../../Widget/WhiteButton'
 const styles = theme => ({
     root: {
         width: '100%',
@@ -65,18 +65,15 @@ class FeedsEdit extends React.Component {
                         </Grid>
                         <Grid item sm={12}>
 
-                            <Grid
-                                justify={'center'}
-                                container alignItems={'center'}
-                                className={' whiteBackGround lighterBorder regHeight'}
-                            >
-                                <Grid item>
 
-                                        <span className={' icon-add-16'}/>
-                                        <span> Add Media
-                                    </span>
-                                </Grid>
-                            </Grid>
+                                    <WhiteButton
+
+                                        link={'/feeds/new'}
+                                        icon={'icon-add-16'}
+                                        value={'Add Media'}
+
+
+                                        />
 
                         </Grid>
                     </Grid>

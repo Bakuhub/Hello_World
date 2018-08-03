@@ -27,7 +27,7 @@ class Options extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Grid container alignItems={'center'}>
+            <Grid container alignItems={'center'} spacing={24}>
                 <Grid item sm={4}>
                     <InputBar title={'Option Name'} placeHolder={'please name your option'}/>
                 </Grid>

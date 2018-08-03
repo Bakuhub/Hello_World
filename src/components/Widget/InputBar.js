@@ -7,7 +7,7 @@ import {Input,Grid} from '@material-ui/core'
 
 const styles = theme => ({
     inputBar: {
-        backgroundColor: styleGuide.greyInputBackGround,
+        backgroundColor: '#f5f5f7',
         borderRadius: '5px',
         height: '35px',
         border: '1px solid #E8E4ED',
@@ -15,14 +15,16 @@ const styles = theme => ({
         color: styleGuide.purpleText,
         paddingLeft: '10px',
         paddingRight: '10px',
-        boxShadow: 'inset 0 5px 1px -5px #000000'
+        boxShadow: 'inset 0 2px 2px 0px #ededed'
+
     },
     title: {
         color: styleGuide.lighterText,
-        fontSize: styleGuide.XL,
+        fontSize: styleGuide.L,
 
-        fontWeight: 'lighter',
-        paddingBottom:styleGuide.M,
+        fontWeight: '100',
+        paddingBottom:'5px',
+
     }
 });
 

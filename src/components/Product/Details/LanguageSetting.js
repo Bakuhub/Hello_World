@@ -1,9 +1,10 @@
 import React from 'react';
 import List from '@material-ui/core/List';
-import {Button, Grid} from '@material-ui/core';
 import ListItem from '@material-ui/core/ListItem';
 import {withStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import PurpleButton from '../../Widget/PurpleButton'
+import {Link} from 'react-router-dom'
 
 
 const drawerWidth = 235;
@@ -71,7 +72,15 @@ const styles = theme => ({
     },
     active: {},
     disActive: {},
-    addButton: {},
+    addButton: {
+
+    },
+    removeButton:{
+
+    },
+    listText:{
+
+    }
 });
 
 class LanguageSetting extends React.Component {
@@ -90,26 +99,21 @@ class LanguageSetting extends React.Component {
         return (
             <List>
                 {shops.map((shop, i) =>
-                    <ListItem className={classes.normalList} key={i}>
-                        <Grid container alignItems={'center'}>
+                    <div>
+                        <span className={'icon-chat-16'}/>
+                        <span
+                            className={classes.listText}
 
-                            <Grid item sm={2}>
-                                <div className={'icon-chat-16'}/>
-                            </Grid>
-                            <Grid item sm={9}>
-
-                                <div>{shop.name}
-                                </div>
-                            </Grid>
-                            <Grid item sm={1}>
-                                <Button variant={'fab'} style={{backgroundColor: '#efefef'}}>
-                                    <div className={'icon-remove-16'} style={{fontSize: '12px'}}/>
-                                </Button>
-                            </Grid>
-
-                        </Grid>
-
-                    </ListItem>
+                        >{shop.name}
+                                </span>
+                        <PurpleButton
+                            link={'#'}
+                            value={'Set Active'}
+                        />
+                        <Link to={'#'}>
+                            <span className={'icon-remove-16'+' '+classes.removeButton} />
+                        </Link>
+                    </div>
                 )}
                 <ListItem button>
                     <div className={'icon-add-16'} style={{color: 'red'}}/>

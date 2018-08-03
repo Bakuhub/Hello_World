@@ -1,24 +1,24 @@
 import PropTypes from "prop-types";
 import React from 'react'
-import {Checkbox, FormControlLabel, Grid, ListItem,Switch} from '@material-ui/core'
+import {Checkbox, FormControlLabel, Grid, ListItem, Switch} from '@material-ui/core'
 import FormTitle from '../Widget/FormTitle'
 import {withStyles} from '@material-ui/core/styles';
 import InputBar from '../Widget/InputBar'
 import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
-import PairCancelButton from '../Widget/PairCancelButton'
 import DragDropZone from '../Widget/DragDropZone'
 import LanguageSetting from './Details/LanguageSetting'
 import BackArrow from '../Widget/BackArrow'
 import Options from './Details/Options'
-import {Link} from 'react-router-dom'
 import StockLogs from './Details/StockLogs'
-
+import PurpleButton from '../Widget/PurpleButton'
+import WhiteButton from '../Widget/WhiteButton'
 import VariantCombinationTable from './Details/VariantCombinationTable'
 
 const styles = theme => ({
     root: {
-        padding: '40px'
+        padding: '40px',
+
     },
     title: {
         padding: ' 0 20px'
@@ -40,16 +40,16 @@ class ProductEdit extends React.Component {
         this.state = {
             placeHolder: '',
             isProductOptionsShow: false,
-            numOfProductVariant:[{
-                product1:[]
-            },{
-                product1:[]
-            },{
-                product1:[]
-            },{
-                product1:[]
-            },{
-                product1:[]
+            numOfProductVariant: [{
+                product1: []
+            }, {
+                product1: []
+            }, {
+                product1: []
+            }, {
+                product1: []
+            }, {
+                product1: []
             },]
         }
     }
@@ -65,18 +65,18 @@ class ProductEdit extends React.Component {
         });
     }
 
-    addProductVariant =() => event => {
+    addProductVariant = () => event => {
         let temp = this.state.numOfProductVariant
         this.setState(
             {
                 numOfProductVariant: temp.push({
-                    variantName:[]
+                    variantName: []
                 })
             }
-
         )
         console.log(this.state.numOfProductVariant)
     }
+
     render() {
         const {classes} = this.props;
 
@@ -92,17 +92,24 @@ class ProductEdit extends React.Component {
 
 
                             </Grid>
-                            <Grid item sm={4}>
+                            <Grid item sm={12}>
+<Grid  container justify={'space-between'} alignItems={'center'}>
+    <Grid item >
                                 <SubTitle title={'Product Name'}/>
-                            </Grid>
-                            <Grid item sm={5}/>
-                            <Grid item sm={3} className={classes.saveCancelButton}>
-                                <PairCancelButton action={'Save Changes'}
-                                                  cancelLink={'/products'}
-                                                  actionLink={'/products'}
+    </Grid>
+    <Grid item >
+
+                                <WhiteButton
+                                    link={'/products'}
+                                    value={'Cancel'}
+
                                 />
-                            </Grid>
-                        </Grid>
+                                <PurpleButton
+                                    link={'/products'}
+                                    value={'Save Changes'}
+                                />
+    </Grid></Grid>
+                            </Grid></Grid>
 
                         <Grid item sm={4}>
                             <Grid container direction={'column'} spacing={40}>
@@ -182,12 +189,14 @@ class ProductEdit extends React.Component {
                                             <InputBar placeHolder={"e.g. AISWDAQ-1 B"}
                                                       title={'SKU(default for variants)'}/>
                                         </Grid>
-                                        <Grid item sm={10}>
+                                        <Grid item sm={12}>
                                             <InputBar placeHolder={"Type some description..."}
                                                       title={'Current Stock Level'}/>
-                                        </Grid>
-                                        <Grid item sm={2}>
-                                         <StockLogs />
+
+                                           <WhiteButton
+                                               icon={'icon-list-16'}
+                                               value={'Stock Logs'}
+                                           />
                                         </Grid>
                                         <Grid item sm={6}>
                                             <InputBar placeHolder={"Minimum stock lev el till warning"}
@@ -234,12 +243,12 @@ class ProductEdit extends React.Component {
                                         </Grid>
                                         {this.state.isProductOptionsShow === true && (
 
-                                            <Grid container alignItems={'center'} spacing={40}>
+                                            <Grid container alignItems={'center'}>
 
-                                                        <Options/>
-                                                        <Options/>
+                                                <Options/>
+                                                <Options/>
                                                 <ListItem button
-                                                onClick = {this.addProductVariant}>
+                                                          onClick={this.addProductVariant}>
                                                     <span className={'icon-add-16'}/>
                                                     <span>Add a Product Variant</span>
                                                 </ListItem>
@@ -247,7 +256,7 @@ class ProductEdit extends React.Component {
                                         )}
                                     </Grid>
                                 </Grid>
-                                {this.state.isProductOptionsShow === true &&(
+                                {this.state.isProductOptionsShow === true && (
 
 
                                     <Grid item>

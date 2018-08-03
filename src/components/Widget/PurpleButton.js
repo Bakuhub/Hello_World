@@ -7,16 +7,10 @@ import {Link} from 'react-router-dom'
 
 
 const styles = theme => ({
-    inputBar: {
-        backgroundColor: styleGuide.greyInputBackGround,
-        borderRadius: '5px',
-        height: '35px',
-        border: '1px solid #E8E4ED',
-        fontSize: '14px',
-        color: styleGuide.purpleText,
-        paddingLeft: '10px',
-        paddingRight: '10px',
-        boxShadow: 'inset 0 5px 1px -5px #000000'
+    root: {
+        display: 'inline-block',
+        backgroundColor: styleGuide.purpleButton,
+        padding: '10px 20px',
     },
     title: {
         color: styleGuide.lighterText,
@@ -24,6 +18,16 @@ const styles = theme => ({
 
         fontWeight: 'lighter',
         paddingBottom: styleGuide.M,
+    },
+    btnText: {
+        color: 'white',
+        fontSize: styleGuide.L,
+
+
+    },
+    icon: {
+        fontSize: styleGuide.XL,
+        marginRight: '5px',
     }
 });
 
@@ -53,19 +57,15 @@ class PurpleButton extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Link to={this.props.link}>
-                <Grid container alignItems={'center'} className={'regHeight purpleButton '}>
+            <Link to={this.props.link}
+                  className={classes.root}>
+                <Grid container alignItems={'center'}>
+                    <span className={classes.icon + ' ' + this.props.icon}/>
+                    <span className={classes.btnText}>
+                                                {this.props.value}
 
-                    <Grid item sm={2}>
-                        <div className={this.props.icon} style={{fontSize: '14px'}}/>
-                    </Grid>
-                    <Grid item sm={1}/>
-                    <Grid item sm={9}>
-
-                        <span className={'Lighter SubHeading'}>
-                        {this.props.value}
-                        </span>
-                    </Grid>
+                    </span>
+                    <span className={classes.icon + ' ' + this.props.icon2}/>
                 </Grid>
             </Link>
         )

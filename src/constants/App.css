@@ -8,6 +8,10 @@
     color: #3f3D52;
 }
 
+* a{
+    text-decoration: none;
+}
+
 .Display4{
     font-size: 28px;
     font-weight: bold;
@@ -102,6 +106,9 @@ body{ margin:0px; padding: 0px; border: 0px;}
     flex: 1 1 auto;
     overflow-x: scroll;
     height: 0;
+    max-width:1200px;
+    margin:0 auto;
+    background-color: #F5F7F7;
 }
 .lighterBorder{
     border: 1px solid #E8E4ED;
@@ -145,4 +152,29 @@ body{ margin:0px; padding: 0px; border: 0px;}
     font-size:13px;
     font-weight:lighter;
 
+}
+.checkboxTheme{
+
+}
+.productTable td{
+    padding:10px 0px;
+    text-align:left;
+}
+.formIcon:before{
+    padding: 10px;
+    color: #DADADB !important;
+}
+.removeTxtDeco{
+    text-decoration: none;
+}
+
+.icon-down-16:before {
+    margin-left: 5px;
+    font-size: 12px;
+}
+.tableHeader span{
+    font-weight: 700;
+    font-size:12px;
+    text-transform: uppercase;
+    color:#9d91ab;
 }
