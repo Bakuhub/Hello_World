@@ -22,16 +22,12 @@ const CustomTableCell = withStyles(theme => ({
 }))(TableCell);
 
 const styles = theme => ({
-    root: {
-        width: '100%',
-        marginTop: theme.spacing.unit * 3,
-        overflowX: 'auto',
-    },
     table: {
+        width:'100%',
+
     },
     row: {
         '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.background.default,
         },
     },
 });
@@ -54,7 +50,6 @@ function CustomizedTable(props) {
     const { classes } = props;
 
     return (
-        <Paper className={classes.root}>
             <Table className={classes.table}>
                 <TableHead>
                     <TableRow>
@@ -94,7 +89,6 @@ function CustomizedTable(props) {
                     })}
                 </TableBody>
             </Table>
-        </Paper>
     );
 }
 

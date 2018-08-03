@@ -4,51 +4,42 @@ import * as styleGuide from '../../constants/styleGuide'
 import Select from 'react-select';
 import {withStyles} from "@material-ui/core/styles/index";
 import PropTypes from "prop-types";
-
 import CreatableSelect from 'react-select/lib/Creatable';
-const styles = theme => ({
-    inputBar: {
-        backgroundColor: styleGuide.greyInputBackGround,
-        borderRadius: '5px',
-        height: '35px',
-        border: '1px solid #E8E4ED',
-        fontSize: '14px',
-        color: styleGuide.purpleText,
-        paddingLeft: '10px',
-        paddingRight: '10px',
-        boxShadow: 'inset 0 5px 1px -5px #000000'
-    },
-    title: {
-        color: styleGuide.lighterText,
-        fontSize: styleGuide.XL,
 
-        fontWeight: 'lighter',
-        paddingBottom: styleGuide.M,
-    }
+
+const dot = (color = '#ccc') => ({
+    alignItems: 'flex-start',
+    display: 'flex',
+
+    ':before': {
+        backgroundColor: color,
+        borderRadius: 10,
+        content: ' ',
+        display: 'block',
+        marginRight: 8,
+        height: 10,
+        width: 10,
+    },
 });
 
-const colourOptions = [
-    {value: 'red', label: 'red', color: 'red'},
-    {value: 'yellow', label: 'yellow', color: 'yellow'},
-    {value: 'blue', label: 'blue', color: 'blue'}, {value: 'red2', label: 'red', color: 'red'},
-    {value: 'yellow2', label: 'yellow', color: 'yellow'},
-    {value: 'blue', label: 'blue', color: 'blue'}, {value: 'red1', label: 'red', color: 'red'},
-    {value: 'ye5llow', label: 'yellow', color: 'yellow'},
-    {value: 'bl2ue', label: 'blue', color: 'blue'}, {value: 'red4', label: 'red', color: 'red'},
-    {value: 'ye5llow', label: 'yellow', color: 'yellow'},
-    {value: 'bl4ue', label: 'blue', color: 'blue'}, {value: 're5d', label: 'red', color: 'red'},
-    {value: 'ye1llow', label: 'yellow', color: 'yellow'},
-    {value: 'blu5e', label: 'blue', color: 'blue'},
-]
 const colourStyles = {
-    control: styles => ({...styles, backgroundColor: 'white',}),
-    option: (styles, {data, isDisabled, isFocused, isSelected}) => {
-        const color = chroma(data.color);
+    control: styles => ({ ...styles,
+        border: '1px solid #E8E4ED',
+fontSize: styleGuide.L,
+boxShadow: 'inset 0 2px 2px 0px #ededed',
+borderRadius: '5px',
+paddingRight: '10px',
+backgroundColor: '#f5f5f7',
+minHeight:'80px',
+        alignItems:'flex-start',
+    }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+        const color = styleGuide.purpleButton;
         return {
             ...styles,
             backgroundColor: isDisabled
                 ? null
-                : isSelected ? data.color : isFocused ? color.alpha(0.1).css() : null,
+                : isSelected ? data.color : isFocused ? color : null,
             color: isDisabled
                 ? '#ccc'
                 : isSelected
@@ -57,27 +48,40 @@ const colourStyles = {
             cursor: isDisabled ? 'not-allowed' : 'default',
         };
     },
-    multiValue: (styles, {data}) => {
-        const color = chroma(data.color);
+    input: styles => ({ ...styles, ...dot(),}),
+    placeholder: styles => ({ ...styles, ...dot()}),
+    multiValue: (styles, { data }) => {
+        const color = styleGuide.greyDivider;
         return {
             ...styles,
-            backgroundColor: color.alpha(0.1).css(),
+            backgroundColor: 'white',
+            border:'1px solid'+styleGuide.greyDivider,
+            borderRadius:'2px',
+            display:'flex',
+            alignItem:'center',
+marginRight:'2px',
+
         };
     },
-    multiValueLabel: (styles, {data}) => ({
+    multiValueLabel: (styles, { data }) => ({
         ...styles,
-        color: data.color,
+        color: styleGuide.purpleText,
     }),
-    multiValueRemove: (styles, {data}) => ({
+    multiValueRemove: (styles, { data }) => ({
         ...styles,
-        color: data.color,
+        color: 'yellow',
+
         ':hover': {
-            backgroundColor: data.color,
-            color: 'white',
+
         },
     }),
 };
 
+
+const colourOptions = [
+    {value: 'red', label: 'red',color:'black'},
+    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},    {value: 'red', label: 'red',color:'black'},
+]
 class TagsBar extends React.Component {
 
     constructor() {
@@ -92,16 +96,19 @@ class TagsBar extends React.Component {
     }
 
     render() {
-        const {classes} = this.props;
         return (
             <Fragment>
-                <div className={classes.title}>
+                <div>
                     {this.props.title}
                 </div>
                 <CreatableSelect
                     isMulti
                     onChange={this.handleChange}
                     options={colourOptions}
+                    className={'gg'}
+                    defaultValue={colourOptions[2]}
+                    label="Single select"
+                    styles={colourStyles}
                 />
             </Fragment>
 
@@ -114,4 +121,4 @@ TagsBar.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TagsBar);
+export default TagsBar;

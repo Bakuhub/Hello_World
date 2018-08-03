@@ -13,7 +13,6 @@ const styles = theme => ({
         border: '1px solid #E8E4ED',
         fontSize: '14px',
         color: styleGuide.purpleText,
-        paddingLeft: '10px',
         paddingRight: '10px',
         boxShadow: 'inset 0 2px 2px 0px #ededed'
 

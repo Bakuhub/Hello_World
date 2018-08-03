@@ -2,13 +2,13 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import * as styleGuide from '../../constants/styleGuide'
-import {Divider} from '@material-ui/core'
+import {Divider,Grid} from '@material-ui/core'
 
 const styles = theme => ({
     title: {
         color: styleGuide.purpleText,
         fontSize: styleGuide.XXL,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     }
 });
 
@@ -28,14 +28,15 @@ class FormTitle extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Fragment>
-                <div className={classes.title}>
+            <Grid
+            container alignItems={'center'} justify={'space-between'}>
+                <Grid item>
+                <span className={classes.title}>
                     {this.props.title}
-                </div>
-                <br/>
-                <Divider/>
-                <br/>
-            </Fragment>
+                </span></Grid>
+                <Grid item >
+                    {this.props.extra}</Grid>
+            </Grid>
 
         );
     }

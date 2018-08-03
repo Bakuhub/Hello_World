@@ -8,9 +8,9 @@ import InputBar from '../../Widget/InputBar'
 
 const styles = theme => ({
     root: {
-        fontSize: styleGuide.XXXL,
-        fontWeight: 'bold',
-        color: styleGuide.purpleText,
+        paddingTop:'20px',
+paddingBottom:'20px',
+        borderBottom:'1px solid' +styleGuide.greyDivider
     }
 });
 
@@ -27,20 +27,13 @@ class Options extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Grid container alignItems={'center'} spacing={24}>
+            <Grid className={classes.root} container alignItems={'center'} spacing={24}>
                 <Grid item sm={4}>
                     <InputBar title={'Option Name'} placeHolder={'please name your option'}/>
                 </Grid>
                 <Grid item sm={8}>
                     <TagsBar title={'Option Choice'}/>
                 </Grid>
-                <Grid item sm={12}>
-                    <br/>
-
-                    <Divider/>
-                </Grid>
-                <br/>
-                <br/>
 
             </Grid>
 

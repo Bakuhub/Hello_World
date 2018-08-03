@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import {withStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import PurpleButton from '../../Widget/PurpleButton'
 import {Link} from 'react-router-dom'
+import * as  styleGuide from '../../../constants/styleGuide'
 
+import {Divider, Grid} from '@material-ui/core'
 
 const drawerWidth = 235;
 
@@ -32,7 +33,7 @@ const shops = [{
 }]
 const styles = theme => ({
     root: {
-        flexGrow: 1,
+        marginBottom: '15px',
     },
 
     drawerPaper: {
@@ -73,13 +74,27 @@ const styles = theme => ({
     active: {},
     disActive: {},
     addButton: {
+        fontSize: styleGuide.L,
+        padding: '3px 10px',
+        backgroundColor: styleGuide.purpleButton,
+        borderRadius: '2px',
+        color: 'white',
+    },
+    removeButton: {
+        float: 'right',
+        fontSize: styleGuide.M,
+    },
+    listText: {
+
+        marginRight:'5px',
 
     },
-    removeButton:{
+    languageIcon:{
+        marginRight:'5px',
 
     },
-    listText:{
-
+    addProduct:{
+        color:styleGuide.purpleButton,
     }
 });
 
@@ -97,31 +112,39 @@ class LanguageSetting extends React.Component {
         const {classes} = this.props;
 
         return (
-            <List>
+            <Fragment>
                 {shops.map((shop, i) =>
-                    <div>
-                        <span className={'icon-chat-16'}/>
+                    <Grid container alignItems={'center'} justify={'space-between'} className={classes.root}>
+                        <Grid item>
+                        <span
+
+                        className={classes.languageIcon  +' ' + 'icon-chat-16'}
+                        />
                         <span
                             className={classes.listText}
 
                         >{shop.name}
                                 </span>
-                        <PurpleButton
-                            link={'#'}
-                            value={'Set Active'}
-                        />
+                        <a
+                            className={classes.addButton}
+
+                        >
+                            Set Active
+                        </a></Grid>
+                        <Grid item >
                         <Link to={'#'}>
-                            <span className={'icon-remove-16'+' '+classes.removeButton} />
-                        </Link>
-                    </div>
+                            <span className={'icon-remove-16' + ' ' + classes.removeButton}/>
+                        </Link></Grid>
+
+                    </Grid>
                 )}
-                <ListItem button>
-                    <div className={'icon-add-16'} style={{color: 'red'}}/>
-                    <div>
+                <a href={'#'}>
+                    <span className={'icon-add-16 purpleIcon'} />
+                    <span className={classes.addProduct}>
                         Add product language
-                    </div>
-                </ListItem>
-            </List>)
+                    </span>
+                </a>
+            </Fragment>)
 
     }
 }

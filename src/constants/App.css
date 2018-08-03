@@ -2,6 +2,43 @@
     font-family:ocs;
     src:url('./font/OpenSans-Regular.ttf')format("truetype");
 }
+@font-face {
+    font-family:ocsBold;
+    src:url('./font/OpenSans-Bold.ttf')format("truetype");
+}
+@font-face {
+    font-family:ocsBoldItalic;
+    src:url('./font/OpenSans-BoldItalic.ttf')format("truetype");
+}
+@font-face {
+    font-family:ocsExtraBold;
+    src:url('./font/OpenSans-ExtraBold.ttf')format("truetype");
+}
+@font-face {
+    font-family:ocsExtraBoldItalic;
+    src:url('./font/OpenSans-ExtraBoldItalic.ttf')format("truetype");
+}
+@font-face {
+    font-family:ocsItalic;
+    src:url('./font/OpenSans-Italic.ttf')format("truetype");
+}
+@font-face {
+    font-family:ocsLight;
+    src:url('./font/OpenSans-Light.ttf')format("truetype");
+}
+@font-face {
+    font-family:ocsLightItalic;
+    src:url('./font/OpenSans-LightItalic.ttf')format("truetype");
+}
+@font-face {
+    font-family:ocsSemiBold;
+    src:url('./font/OpenSans-SemiBold.ttf')format("truetype");
+}
+@font-face {
+    font-family:ocsSemiBoldItalic;
+    src:url('./font/OpenSans-SemiBoldItalic.ttf')format("truetype");
+}
+
 
 *{
     font-family:ocs;
@@ -164,6 +201,10 @@ body{ margin:0px; padding: 0px; border: 0px;}
     padding: 10px;
     color: #DADADB !important;
 }
+.purpleIcon:before{
+    padding-right: 10px;
+    color: #905CC4 !important;
+}
 .removeTxtDeco{
     text-decoration: none;
 }
@@ -178,3 +219,8 @@ body{ margin:0px; padding: 0px; border: 0px;}
     text-transform: uppercase;
     color:#9d91ab;
 }
+
+input[type=text]{
+    padding-left: 10px;
+}
+

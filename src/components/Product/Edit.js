@@ -14,7 +14,7 @@ import StockLogs from './Details/StockLogs'
 import PurpleButton from '../Widget/PurpleButton'
 import WhiteButton from '../Widget/WhiteButton'
 import VariantCombinationTable from './Details/VariantCombinationTable'
-
+import InputBarWithButton from '../Widget/InputBarWithButton'
 const styles = theme => ({
     root: {
         padding: '40px',
@@ -30,7 +30,20 @@ const styles = theme => ({
     childInput: {
         padding: '60px'
     },
-    shopListItem: styleGuide.shopListItem
+    shopListItem: styleGuide.shopListItem,
+    addVariant:{
+        paddingTop:'20px',
+        color:styleGuide.purpleButton,
+
+    },
+    formTitle:{
+borderBottom:'1px solid'+styleGuide.greyDivider,
+        padding: '0px 0px 20px !important',
+        margin:'8px'
+}
+
+
+
 
 });
 
@@ -115,7 +128,7 @@ class ProductEdit extends React.Component {
                             <Grid container direction={'column'} spacing={40}>
                                 <Grid item>
                                     <Grid container alignItems={'stretch'} spacing={16} className={classes.form}>
-                                        <Grid item sm={12}>
+                                        <Grid item sm={12} className={classes.formTitle}>
                                             <FormTitle title={'Images & Videos'}/>
                                         </Grid>
 
@@ -143,7 +156,7 @@ class ProductEdit extends React.Component {
                                 </Grid>
                                 <Grid item>
                                     <Grid container spacing={16} className={classes.form}>
-                                        <Grid item sm={12}>
+                                        <Grid item sm={12} className={classes.formTitle}>
                                             <FormTitle title={'Language Setting'}/>
                                         </Grid>
 
@@ -157,7 +170,7 @@ class ProductEdit extends React.Component {
                             <Grid container direction={'column'} spacing={40}>
                                 <Grid item>
                                     <Grid container alignItems={'stretch'} spacing={16} className={classes.form}>
-                                        <Grid item sm={12}>
+                                        <Grid item sm={12} className={classes.formTitle}>
                                             <FormTitle title={'Images & Videos'}/>
                                         </Grid>
                                         <Grid item sm={12}>
@@ -182,7 +195,7 @@ class ProductEdit extends React.Component {
                                 </Grid>
                                 <Grid item>
                                     <Grid container spacing={16} className={classes.form}>
-                                        <Grid item sm={12}>
+                                        <Grid item sm={12} className={classes.formTitle}>
                                             <FormTitle title={'Inventory & Shipping'}/>
                                         </Grid>
                                         <Grid item sm={12}>
@@ -190,13 +203,14 @@ class ProductEdit extends React.Component {
                                                       title={'SKU(default for variants)'}/>
                                         </Grid>
                                         <Grid item sm={12}>
-                                            <InputBar placeHolder={"Type some description..."}
-                                                      title={'Current Stock Level'}/>
+<InputBarWithButton
 
-                                           <WhiteButton
-                                               icon={'icon-list-16'}
-                                               value={'Stock Logs'}
-                                           />
+    placeHolder={"Type some description..."}
+    title={'Current Stock Level'}
+    icon={'icon-list-16'}
+    value={'Stock Logs'}
+
+/>
                                         </Grid>
                                         <Grid item sm={6}>
                                             <InputBar placeHolder={"Minimum stock lev el till warning"}
@@ -226,32 +240,37 @@ class ProductEdit extends React.Component {
                                 </Grid>
                                 <Grid item>
                                     <Grid container alignItems={'stretch'} spacing={16} className={classes.form}>
-                                        <Grid item sm={10}>
-                                            <FormTitle title={'Product Options'}/>
-                                        </Grid>
-                                        <Grid item sm={2}>
-                                            <FormControlLabel
-                                                control={
-                                                    <Switch
+                                        <Grid item sm={12} className={classes.formTitle}>
+                                            <FormTitle title={'Product Options'}
+                                            extra={(
+                                                <FormControlLabel
+                                                    control={
+                                                        <Switch
 
-                                                        checked={this.state.checkedB}
-                                                        onChange={this.productOptionSwitch()}
-                                                        value="checkedB"
-                                                    />
-                                                }
-                                            />
+                                                            checked={this.state.checkedB}
+                                                            onChange={this.productOptionSwitch()}
+                                                            value="checkedB"
+
+                                                        />
+                                                    }
+                                                    style={ {float:'right',}}
+                                                />
+                                            )}/>
                                         </Grid>
+
                                         {this.state.isProductOptionsShow === true && (
 
                                             <Grid container alignItems={'center'}>
 
                                                 <Options/>
                                                 <Options/>
-                                                <ListItem button
-                                                          onClick={this.addProductVariant}>
-                                                    <span className={'icon-add-16'}/>
-                                                    <span>Add a Product Variant</span>
-                                                </ListItem>
+
+                                                <a href={'#'} className={classes.addVariant} onClick={this.addProductVariant}>
+                                                    <span className={'icon-add-16 purpleIcon'} />
+                                                    <span className={classes.addVariant}>
+                      Add a Product Variant
+                    </span>
+                                                </a>
                                             </Grid>
                                         )}
                                     </Grid>
@@ -261,7 +280,7 @@ class ProductEdit extends React.Component {
 
                                     <Grid item>
                                         <Grid container alignItems={'stretch'} spacing={16} className={classes.form}>
-                                            <Grid item sm={12}>
+                                            <Grid item sm={12} className={classes.formTitle}>
                                                 <FormTitle title={'Product Options'}/>
                                             </Grid>
                                             <Grid item sm={12}>
