@@ -10,7 +10,8 @@ import PairCancelButton from '../Widget/PairCancelButton'
 import DragDropZone from '../Widget/DragDropZone'
 import LanguageSetting from './Details/LanguageSetting'
 import BackArrow from '../Widget/BackArrow'
-
+import WhiteButton from '../Widget/WhiteButton'
+import PurpleButton from '../Widget/PurpleButton'
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -67,17 +68,28 @@ class Variant extends React.Component {
                                 link ={'/products/g' }/>
 
 
+
                             </Grid>
-                            <Grid item sm={4}>
+                            <Grid item sm={12}>
+                                <Grid container justify={'space-between'}>
+                            <Grid item>
                                 <SubTitle title={'Product Name'}/>
                             </Grid>
-                            <Grid item sm={5}/>
-                            <Grid item sm={3} className={classes.saveCancelButton}>
-                                <PairCancelButton action={'Update Variant'}
-                                                  cancelLink = {'/products/p'}
-                                                  actionLink={'/products/p'}
+                            <Grid item className={classes.saveCancelButton}>
+
+                                <WhiteButton
+                                link={'/products/new'}
+                                value={'Cancel'}
+                                />
+                                <PurpleButton
+                                value={'Update Variant'}
+                                link={'/products/new'}
+
+
                                 />
                             </Grid>
+                                </Grid></Grid>
+
                         </Grid>
 
                         <Grid item sm={4}>

@@ -15,6 +15,7 @@ import PurpleButton from '../Widget/PurpleButton'
 import WhiteButton from '../Widget/WhiteButton'
 import VariantCombinationTable from './Details/VariantCombinationTable'
 import InputBarWithButton from '../Widget/InputBarWithButton'
+
 const styles = theme => ({
     root: {
         padding: '40px',
@@ -31,18 +32,16 @@ const styles = theme => ({
         padding: '60px'
     },
     shopListItem: styleGuide.shopListItem,
-    addVariant:{
-        paddingTop:'20px',
-        color:styleGuide.purpleButton,
+    addVariant: {
+        paddingTop: '20px',
+        color: styleGuide.purpleButton,
 
     },
-    formTitle:{
-borderBottom:'1px solid'+styleGuide.greyDivider,
+    formTitle: {
+        borderBottom: '1px solid' + styleGuide.greyDivider,
         padding: '0px 0px 20px !important',
-        margin:'8px'
-}
-
-
+        margin: '8px'
+    }
 
 
 });
@@ -106,22 +105,22 @@ class ProductEdit extends React.Component {
 
                             </Grid>
                             <Grid item sm={12}>
-<Grid  container justify={'space-between'} alignItems={'center'}>
-    <Grid item >
-                                <SubTitle title={'Product Name'}/>
-    </Grid>
-    <Grid item >
+                                <Grid container justify={'space-between'} alignItems={'center'}>
+                                    <Grid item>
+                                        <SubTitle title={'Product Name'}/>
+                                    </Grid>
+                                    <Grid item>
 
-                                <WhiteButton
-                                    link={'/products'}
-                                    value={'Cancel'}
+                                        <WhiteButton
+                                            link={'/products'}
+                                            value={'Cancel'}
 
-                                />
-                                <PurpleButton
-                                    link={'/products'}
-                                    value={'Save Changes'}
-                                />
-    </Grid></Grid>
+                                        />
+                                        <PurpleButton
+                                            link={'/products'}
+                                            value={'Save Changes'}
+                                        />
+                                    </Grid></Grid>
                             </Grid></Grid>
 
                         <Grid item sm={4}>
@@ -203,14 +202,14 @@ class ProductEdit extends React.Component {
                                                       title={'SKU(default for variants)'}/>
                                         </Grid>
                                         <Grid item sm={12}>
-<InputBarWithButton
+                                            <InputBarWithButton
 
-    placeHolder={"Type some description..."}
-    title={'Current Stock Level'}
-    icon={'icon-list-16'}
-    value={'Stock Logs'}
+                                                placeHolder={"Type some description..."}
+                                                title={'Current Stock Level'}
+                                                icon={'icon-list-16'}
+                                                value={'Stock Logs'}
 
-/>
+                                            />
                                         </Grid>
                                         <Grid item sm={6}>
                                             <InputBar placeHolder={"Minimum stock lev el till warning"}
@@ -242,20 +241,20 @@ class ProductEdit extends React.Component {
                                     <Grid container alignItems={'stretch'} spacing={16} className={classes.form}>
                                         <Grid item sm={12} className={classes.formTitle}>
                                             <FormTitle title={'Product Options'}
-                                            extra={(
-                                                <FormControlLabel
-                                                    control={
-                                                        <Switch
+                                                       extra={(
+                                                           <FormControlLabel
+                                                               control={
+                                                                   <Switch
 
-                                                            checked={this.state.checkedB}
-                                                            onChange={this.productOptionSwitch()}
-                                                            value="checkedB"
+                                                                       checked={this.state.checkedB}
+                                                                       onChange={this.productOptionSwitch()}
+                                                                       value="checkedB"
 
-                                                        />
-                                                    }
-                                                    style={ {float:'right',}}
-                                                />
-                                            )}/>
+                                                                   />
+                                                               }
+                                                               style={{float: 'right',}}
+                                                           />
+                                                       )}/>
                                         </Grid>
 
                                         {this.state.isProductOptionsShow === true && (
@@ -265,8 +264,9 @@ class ProductEdit extends React.Component {
                                                 <Options/>
                                                 <Options/>
 
-                                                <a href={'#'} className={classes.addVariant} onClick={this.addProductVariant}>
-                                                    <span className={'icon-add-16 purpleIcon'} />
+                                                <a href={'#'} className={classes.addVariant}
+                                                   onClick={this.addProductVariant}>
+                                                    <span className={'icon-add-16 purpleIcon'}/>
                                                     <span className={classes.addVariant}>
                       Add a Product Variant
                     </span>
