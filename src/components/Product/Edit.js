@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from 'react'
-import {Checkbox, FormControlLabel, Grid, ListItem, Switch} from '@material-ui/core'
+import {Checkbox, FormControlLabel, Grid, Switch} from '@material-ui/core'
 import FormTitle from '../Widget/FormTitle'
 import {withStyles} from '@material-ui/core/styles';
 import InputBar from '../Widget/InputBar'
@@ -10,7 +10,6 @@ import DragDropZone from '../Widget/DragDropZone'
 import LanguageSetting from './Details/LanguageSetting'
 import BackArrow from '../Widget/BackArrow'
 import Options from './Details/Options'
-import StockLogs from './Details/StockLogs'
 import PurpleButton from '../Widget/PurpleButton'
 import WhiteButton from '../Widget/WhiteButton'
 import VariantCombinationTable from './Details/VariantCombinationTable'

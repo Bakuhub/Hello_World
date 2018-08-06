@@ -59,7 +59,7 @@ minHeight:'80px',
             borderRadius:'2px',
             display:'flex',
             alignItem:'center',
-marginRight:'2px',
+
 
         };
     },
@@ -70,7 +70,6 @@ marginRight:'2px',
     multiValueRemove: (styles, { data }) => ({
         ...styles,
         color: 'yellow',
-
         ':hover': {
 
         },

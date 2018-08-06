@@ -50,45 +50,45 @@ function CustomizedTable(props) {
     const { classes } = props;
 
     return (
-            <Table className={classes.table}>
-                <TableHead>
-                    <TableRow>
-                        <CustomTableCell>color | size</CustomTableCell>
-                        <CustomTableCell numeric>SKU</CustomTableCell>
-                        <CustomTableCell numeric>price</CustomTableCell>
-                        <CustomTableCell numeric> </CustomTableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {data.map(n => {
-                        return (
-                            <TableRow className={classes.row} key={n.id}>
-                                <CustomTableCell component="th" scope="row">
-                                    {
-                                        n.name+' | '+n.calories
-                                    }
-                                </CustomTableCell>
-                                <CustomTableCell numeric contenteditable="true">
-                                    {n.fat}
-                                    </CustomTableCell >
-                                <CustomTableCell numeric contenteditable="true">
-                                    {n.carbs}
-                                    </CustomTableCell>
-                                <CustomTableCell >
+        <Table className={classes.table}>
+            <TableHead>
+                <TableRow>
+                    <CustomTableCell>color | size</CustomTableCell>
+                    <CustomTableCell numeric>SKU</CustomTableCell>
+                    <CustomTableCell numeric>price</CustomTableCell>
+                    <CustomTableCell numeric> </CustomTableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                {data.map(n => {
+                    return (
+                        <TableRow className={classes.row} key={n.id}>
+                            <CustomTableCell component="th" scope="row">
+                                {
+                                    n.name+' | '+n.calories
+                                }
+                            </CustomTableCell>
+                            <CustomTableCell numeric contenteditable="true">
+                                {n.fat}
+                            </CustomTableCell >
+                            <CustomTableCell numeric contenteditable="true">
+                                {n.carbs}
+                            </CustomTableCell>
+                            <CustomTableCell >
 
-                                    <WhiteButton
-                                        icon={'icon-view-16'}
+                                <WhiteButton
+                                    icon={'icon-view-16'}
                                     link={'/products/productId/variantId'}
                                     value={'Manage Variant'}
-                                    />
+                                />
 
 
-                                    </CustomTableCell>
-                            </TableRow>
-                        );
-                    })}
-                </TableBody>
-            </Table>
+                            </CustomTableCell>
+                        </TableRow>
+                    );
+                })}
+            </TableBody>
+        </Table>
     );
 }
 

@@ -6,12 +6,11 @@ import {Checkbox, FormControlLabel, Grid} from '@material-ui/core'
 import FormTitle from '../Widget/FormTitle'
 import InputBar from '../Widget/InputBar'
 import SubTitle from '../Widget/SubTitle'
-import PairCancelButton from '../Widget/PairCancelButton'
 import DragDropZone from '../Widget/DragDropZone'
-import LanguageSetting from './Details/LanguageSetting'
 import BackArrow from '../Widget/BackArrow'
 import WhiteButton from '../Widget/WhiteButton'
 import PurpleButton from '../Widget/PurpleButton'
+
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -26,7 +25,7 @@ const styles = theme => ({
         padding: '60px'
     },
     form: styleGuide.formBlock,
-    shopListItem:styleGuide.shopListItem,
+    shopListItem: styleGuide.shopListItem,
 
 });
 
@@ -65,29 +64,28 @@ class Variant extends React.Component {
                             <Grid item sm={12}>
 
                                 <BackArrow title={'back to product list'}
-                                link ={'/products/g' }/>
-
+                                           link={'/products/g'}/>
 
 
                             </Grid>
                             <Grid item sm={12}>
                                 <Grid container justify={'space-between'}>
-                            <Grid item>
-                                <SubTitle title={'Product Name'}/>
-                            </Grid>
-                            <Grid item className={classes.saveCancelButton}>
+                                    <Grid item>
+                                        <SubTitle title={'Product Name'}/>
+                                    </Grid>
+                                    <Grid item className={classes.saveCancelButton}>
 
-                                <WhiteButton
-                                link={'/products/new'}
-                                value={'Cancel'}
-                                />
-                                <PurpleButton
-                                value={'Update Variant'}
-                                link={'/products/new'}
+                                        <WhiteButton
+                                            link={'/products/new'}
+                                            value={'Cancel'}
+                                        />
+                                        <PurpleButton
+                                            value={'Update Variant'}
+                                            link={'/products/new'}
 
 
-                                />
-                            </Grid>
+                                        />
+                                    </Grid>
                                 </Grid></Grid>
 
                         </Grid>

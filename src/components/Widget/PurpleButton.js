@@ -11,6 +11,8 @@ const styles = theme => ({
         display: 'inline-block',
         backgroundColor: styleGuide.purpleButton,
         padding: '10px 20px',
+        border:'1px solid'+ styleGuide.purpleButton,
+
     },
     title: {
         color: styleGuide.lighterText,
@@ -63,7 +65,6 @@ class PurpleButton extends React.Component {
                     <span className={classes.icon + ' ' + this.props.icon}/>
                     <span className={classes.btnText}>
                                                 {this.props.value}
-
                     </span>
                     <span className={classes.icon + ' ' + this.props.icon2}/>
                 </Grid>

@@ -58,9 +58,9 @@ class EnhancedTableHead extends React.Component {
 
         return (
 
-            <TableHead style={ {
-                backgroundColor:'#fafafa',
-                border:'1px solid'+styleGuide.greyDivider,
+            <TableHead style={{
+                backgroundColor: '#fafafa',
+                border: '1px solid' + styleGuide.greyDivider,
             }}>
                 <TableRow>
                     <TableCell padding="checkbox">
@@ -179,7 +179,7 @@ EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
 const styles = theme => ({
     root: {
 
-        padding:'35px 35px 0 35px',
+        padding: '35px 35px 0 35px',
     },
     table: {
         minWidth: 1000,
@@ -205,7 +205,7 @@ const styles = theme => ({
         display: 'inline-block',
         width: '100%',
         marginBottom: '20px',
-        marginTop:'30px',
+        marginTop: '30px',
     },
     floatRight: {
         float: 'right',
@@ -324,9 +324,8 @@ class EnhancedTable extends React.Component {
 
         return (
             <Grid container
-                  className={'greyBackGround'+' '+classes.root}
-                 >
-
+                  className={'greyBackGround' + ' ' + classes.root}
+            >
 
 
                 <Grid item sm={12}>

@@ -24,6 +24,7 @@ import VariantProduct from './Product/Variant'
 import FeedsOverview from './Feeds/Overview'
 import FeedsEdit from './Feeds/Edit'
 import SectionEdit from './Feeds/Variant'
+import OrdersOverview from './Order/Overview'
 const mapStateToProps = state => {
     return {
         appLoaded: state.common.appLoaded,
@@ -93,7 +94,7 @@ class App extends React.Component {
                                 <Route path="/@:username" component={Profile}/>
                                 <Route path='/test' component={EnhancedTable}/>
 
-
+                                <Route exact path={'/orders'} component={OrdersOverview}/>
 
 
                                 <Route exact path='/feeds' component={FeedsOverview}/>

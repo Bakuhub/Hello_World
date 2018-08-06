@@ -149,7 +149,7 @@ class PermanentDrawer extends React.Component {
 
                     </ListItem>
 
-                    <ListItem button className={classes.nestedList}>
+                    <ListItem  component={Link} to={'/orders'}  button className={classes.nestedList}>
                         <Grid container alignItems={'center'}>
                             <Grid item sm={2}>
                                 <Grid container alignItems={'center'}

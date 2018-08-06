@@ -43,7 +43,7 @@ class StockLogs extends React.Component {
                     justify={'center'}
                     className={classes.root}>
                     <span className={'icon-list-16'}/>
-                    <span> &nbsp;Stock Logs</span>
+                    <span> Stock Logs</span>
                 </ListItem>
             </Fragment>
 

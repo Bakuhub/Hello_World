@@ -8,7 +8,7 @@ import SearchBar from '../Widget/SearchBar'
 import BlogsCol from './Blogs/Overview'
 import {Link} from 'react-router-dom'
 import WhiteButton from '../Widget/WhiteButton'
-
+import DayPicker from 'react-day-picker'
 const styles = theme => ({
     root: {
         padding: '40px'

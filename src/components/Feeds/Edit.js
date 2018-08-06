@@ -8,6 +8,8 @@ import * as styleGuide from "../../constants/styleGuide";
 import {withStyles} from '@material-ui/core/styles';
 import PropTypes from "prop-types";
 import PurpleButton from '../Widget/PurpleButton'
+import WhiteButton from '../Widget/WhiteButton'
+
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -32,6 +34,7 @@ const styles = theme => ({
         padding: '0 10%',
 
     },
+
     purpleButton: {
         backgroundColor: styleGuide.purpleText,
         border: styleGuide.regBorder,
@@ -61,24 +64,26 @@ class FeedsEdit extends React.Component {
                 <Grid item sm={12}>
                     <BackArrow title={'back to blog list'} link={'/feeds'}/>
                 </Grid>
-                <Grid item sm={9}>
+                <Grid item sm={8}>
                     <SubTitle title={'Create a blog post'}/></Grid>
-                <Grid item sm={3}>
-                    <Grid container spacing={16} alignItems={'center'}>
+                <Grid item sm={4}>
+                    <Grid container
+                          justify={'flex-end'}
+                          spacing={16} alignItems={'center'}>
                         <Grid item>
-                        <PurpleButton
-                        link={'/feeds/new'}
-                        icon={'icon-view-16'}
-value={'preview post'}
-                        />
+                            <PurpleButton
+                                link={'/feeds/new'}
+                                icon={'icon-view-16'}
+                                value={'preview post'}
+                            />
                         </Grid>
                         <Grid item>
-                            <ListItem button to={'/feeds/new'} className={classes.whiteButton}>
-                               <span>
-                                   Publish Article
-                               </span>
 
-                            </ListItem>
+                            <WhiteButton
+                                link={'/feeds'}
+                                value={'Publish Article'}
+
+                            />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -96,15 +101,14 @@ value={'preview post'}
                                 Products that will make your life easier
                             </div>
                         </Grid>
+
                         <Grid item sm={3}>
                             <Grid container>
-                                <Grid item sm={10}>
-                                    <ListItem button to={'/feeds/new'} className={classes.purpleButton}>Save
-                                        Changes...</ListItem>
-                                </Grid>
-                                <Grid item sm={2}>
-                                    <Link to={'/feeds'} className={' icon-more-16'}/>
-                                </Grid>
+                                <PurpleButton
+                                    link={'/feeds'}
+                                    value={'Save Changes...'}
+                                />
+                                <Link to={'/feeds'} className={' icon-more-16'}/>
                             </Grid>
 
                         </Grid>
@@ -112,34 +116,34 @@ value={'preview post'}
                             <Grid container>
                                 <Grid item sm={12}>
                                     <div className={classes.toolBar}>
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
-                                      <span className={'icon-upload-24'} />
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
+                                        <span className={'icon-upload-24'}/>
                                     </div>
                                 </Grid>
 
