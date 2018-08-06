@@ -7,12 +7,12 @@ import {Link} from 'react-router-dom'
 
 
 const styles = theme => ({
-    root: {
-        display: 'inline-block',
-        backgroundColor: 'white',
-        padding: '10px 20px',
-        border: '1px solid' + styleGuide.greyDivider,
-        maxHeight: '40px'
+    root:{
+        display:'inline-block',
+        backgroundColor:'white',
+        padding:'10px 20px',
+        border:'1px solid'+styleGuide.greyDivider,
+        maxHeight:'40px'
     },
     title: {
         color: styleGuide.lighterText,
@@ -21,19 +21,19 @@ const styles = theme => ({
         fontWeight: 'lighter',
         paddingBottom: styleGuide.M,
     },
-    btnText: {
-        fontSize: styleGuide.L,
+    btnText:{
+        fontSize:styleGuide.L,
 
 
     },
-    icon: {
-        fontSize: styleGuide.XL,
-        marginRight: '5px',
+    icon:{
+        fontSize:styleGuide.XL,
+        marginRight:'5px',
     }
 
 });
 
-class WhiteButton extends React.Component {
+class StatusLabel extends React.Component {
     state = {
         anchor: 'left',
     };
@@ -42,6 +42,7 @@ class WhiteButton extends React.Component {
         super()
         this.state = {
             placeHolder: '',
+
 
         }
     }
@@ -58,7 +59,7 @@ class WhiteButton extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Link to={this.props.link ? this.props.link : '#'} className={classes.root}>
+            <Link to={this.props.link?this.props.link:'#'} className={classes.root}>
                 <Grid container alignItems={'center'}>
                     <span className={classes.icon + ' ' + this.props.icon}/>
                     <span className={classes.btnText}>
@@ -72,8 +73,8 @@ class WhiteButton extends React.Component {
     }
 }
 
-WhiteButton.propTypes = {
+StatusLabel.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(WhiteButton);
+export default withStyles(styles)(StatusLabel);

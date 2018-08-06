@@ -2,8 +2,7 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import * as styleGuide from '../../constants/styleGuide'
-import {Input,Grid} from '@material-ui/core'
-import WhiteButton from './WhiteButton'
+import {Grid, Input} from '@material-ui/core'
 import {Link} from 'react-router-dom'
 
 const styles = theme => ({
@@ -22,25 +21,25 @@ const styles = theme => ({
         fontSize: styleGuide.L,
 
         fontWeight: '100',
-        paddingBottom:'5px',
+        paddingBottom: '5px',
 
     },
-    root:{
-        display:'inline-block',
-        backgroundColor:'white',
-        padding:'10px 20px',
-        borderLeft:'1px solid'+styleGuide.greyDivider,
-        maxHeight:'40px'
+    root: {
+        display: 'inline-block',
+        backgroundColor: 'white',
+        padding: '10px 20px',
+        borderLeft: '1px solid' + styleGuide.greyDivider,
+        maxHeight: '40px'
     },
 
-    btnText:{
-        fontSize:styleGuide.L,
+    btnText: {
+        fontSize: styleGuide.L,
 
 
     },
-    icon:{
-        fontSize:styleGuide.XL,
-        marginRight:'5px',
+    icon: {
+        fontSize: styleGuide.XL,
+        marginRight: '5px',
     }
 });
 
@@ -54,8 +53,8 @@ class InputBar extends React.Component {
         this.state = {
             placeHolder: '',
             title: '',
-            startAdornment:'',
-            endAdornment:'',
+            startAdornment: '',
+            endAdornment: '',
 
         }
     }
@@ -72,37 +71,36 @@ class InputBar extends React.Component {
         const {classes} = this.props;
 
         return (
-<Fragment>
-    <div className={classes.title}>
-        {this.props.title}
-    </div>
-<div>
-    < Input className={classes.inputBar}
+            <Fragment>
+                <div className={classes.title}>
+                    {this.props.title}
+                </div>
+                <div>
+                    < Input className={classes.inputBar}
 
-            fullWidth={true}
-            placeholder={this.props.placeHolder
-            }
-            disableUnderline={true}
-            value={this.state.name}
-            onChange={this.handleChange('name')}
-            startAdornment={this.props.startAdornment}
-            endAdornment={   (  <Link to={this.props.link?this.props.link:'#'} className={classes.root}>
-                <Grid container alignItems={'center'}>
-                    <span className={classes.icon + ' ' + this.props.icon}/>
-                    <span className={classes.btnText}>
+                            fullWidth={true}
+                            placeholder={this.props.placeHolder
+                            }
+                            disableUnderline={true}
+                            value={this.state.name}
+                            onChange={this.handleChange('name')}
+                            startAdornment={this.props.startAdornment}
+                            endAdornment={(<Link to={this.props.link ? this.props.link : '#'} className={classes.root}>
+                                <Grid container alignItems={'center'}>
+                                    <span className={classes.icon + ' ' + this.props.icon}/>
+                                    <span className={classes.btnText}>
                                                 {this.props.value}
-
                     </span>
-                    <span className={classes.icon + ' ' + this.props.icon2}/>
-                </Grid>
-            </Link>)
-            }
+                                    <span className={classes.icon + ' ' + this.props.icon2}/>
+                                </Grid>
+                            </Link>)
+                            }
 
-    />
+                    />
 
 
-</div>
-</Fragment>
+                </div>
+            </Fragment>
 
         );
     }

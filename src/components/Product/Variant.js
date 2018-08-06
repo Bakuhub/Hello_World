@@ -10,7 +10,7 @@ import DragDropZone from '../Widget/DragDropZone'
 import BackArrow from '../Widget/BackArrow'
 import WhiteButton from '../Widget/WhiteButton'
 import PurpleButton from '../Widget/PurpleButton'
-
+import InputBarWithButton from '../Widget/InputBarWithButton'
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -155,12 +155,15 @@ class Variant extends React.Component {
                                             <InputBar placeHolder={"e.g. AISWDAQ-1 B"}
                                                       title={'SKU(default for variants)'}/>
                                         </Grid>
-                                        <Grid item sm={10}>
-                                            <InputBar placeHolder={"Type some description..."}
-                                                      title={'Current Stock Level'}/>
-                                        </Grid>
-                                        <Grid item sm={2}>
-                                            <div> Stock Logs</div>
+                                        <Grid item sm={12}>
+                                            <InputBarWithButton
+
+                                                placeHolder={"Type some description..."}
+                                                title={'Current Stock Level'}
+                                                icon={'icon-list-16'}
+                                                value={'Stock Logs'}
+
+                                            />
 
                                         </Grid>
                                         <Grid item sm={6}>

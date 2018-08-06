@@ -6,7 +6,8 @@ import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
 import SearchBar from '../Widget/SearchBar'
 import WhiteButton from '../Widget/WhiteButton'
-
+import Table from '../Widget/Table'
+import DropDown from '../Widget/dropdown'
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -28,7 +29,12 @@ const styles = theme => ({
 class OrdersOverview extends React.Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+
+          open: true
+
+
+    }
 
     }
 
@@ -67,9 +73,11 @@ class OrdersOverview extends React.Component {
                     <Divider/>
                 </Grid>
                 <Grid item sm={12}>
-
+<Table/>
                 </Grid>
-
+<Grid item sm={12}>
+    <DropDown/>
+</Grid>
             </Grid>);
     }
 }
