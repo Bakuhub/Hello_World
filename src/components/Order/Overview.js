@@ -5,9 +5,11 @@ import {withStyles} from '@material-ui/core/styles';
 import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
 import SearchBar from '../Widget/SearchBar'
-import WhiteButton from '../Widget/WhiteButton'
 import Table from '../Widget/Table'
-import DropDown from '../Widget/dropdown'
+import WhiteDropDown from '../Widget/WhiteDropDown'
+import WhiteButton from '../Widget/WhiteButton'
+import statusLabel from '../Widget/statusLabel'
+
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -31,10 +33,10 @@ class OrdersOverview extends React.Component {
         super()
         this.state = {
 
-          open: true
+            open: true
 
 
-    }
+        }
 
     }
 
@@ -51,7 +53,7 @@ class OrdersOverview extends React.Component {
                     <Grid container justify={'space-between'} alignItems={'center'}>
                         <Grid item>
 
-                            <WhiteButton
+                            <WhiteDropDown
                                 icon={'icon-more-16'}
                                 value={'Filter'}
 
@@ -59,7 +61,7 @@ class OrdersOverview extends React.Component {
 
                             <SearchBar/>
                         </Grid>
-                            <Grid item>
+                        <Grid item>
                             <WhiteButton
                                 icon={'icon-share-16'}
                                 value={'Export List'}
@@ -73,11 +75,10 @@ class OrdersOverview extends React.Component {
                     <Divider/>
                 </Grid>
                 <Grid item sm={12}>
-<Table/>
+                    <Table/>
                 </Grid>
-<Grid item sm={12}>
-    <DropDown/>
-</Grid>
+                <Grid item sm={12}>
+                </Grid>
             </Grid>);
     }
 }

@@ -8,6 +8,7 @@ import SearchBar from '../Widget/SearchBar'
 import BlogsCol from './Blogs/Overview'
 import {Link} from 'react-router-dom'
 import WhiteButton from '../Widget/WhiteButton'
+import WhiteDropDown from '../Widget/WhiteDropDown'
 import DayPicker from 'react-day-picker'
 const styles = theme => ({
     root: {
@@ -50,7 +51,7 @@ class FeedsOverview extends React.Component {
                         value={'Mar 10   -   Apr 30'}
 
                     />
-                    <WhiteButton
+                    <WhiteDropDown
                         icon={'icon-filter-16'}
                         icon2={'icon-down-16'}
                         value={'All'}

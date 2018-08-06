@@ -5,11 +5,15 @@ import {withStyles} from '@material-ui/core/styles';
 import PropTypes from "prop-types";
 import {Link} from 'react-router-dom'
 
+const statusOptions ={
+    success:'black',
+
+}
 
 const styles = theme => ({
     root:{
         display:'inline-block',
-        backgroundColor:'white',
+        backgroundColor: statusOptions[this.props.value],
         padding:'10px 20px',
         border:'1px solid'+styleGuide.greyDivider,
         maxHeight:'40px'
@@ -59,16 +63,14 @@ class StatusLabel extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Link to={this.props.link?this.props.link:'#'} className={classes.root}>
+            <div className={classes.root} style={ {backgroundColor:statusOptions[this.props.value]}}>
                 <Grid container alignItems={'center'}>
-                    <span className={classes.icon + ' ' + this.props.icon}/>
                     <span className={classes.btnText}>
                                                 {this.props.value}
 
                     </span>
-                    <span className={classes.icon + ' ' + this.props.icon2}/>
                 </Grid>
-            </Link>
+            </div>
         )
     }
 }

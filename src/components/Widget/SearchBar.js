@@ -12,7 +12,7 @@ const styles = theme => ({
         backgroundColor: 'white',
         padding: '5px 20px',
         border: '1px solid' + styleGuide.greyDivider,
-        width:'400px'
+        width:'300px'
     },
     title: {
         color: styleGuide.lighterText,
@@ -59,8 +59,8 @@ class WhiteButton extends React.Component {
         const {classes} = this.props;
 
         return (
-            <div to={this.props.link ? this.props.link : '#'} className={classes.root}>
-                <Grid container alignItems={'center'} >
+            <div className={classes.root} >
+                <Grid container alignItems={'center'}  >
                     <span className={'icon-search-16' + ' ' + this.props.icon}/>
                     <Input className={classes.btnText}
                            placeholder={this.props.placeHolder}

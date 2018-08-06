@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -282,26 +282,30 @@ class EnhancedTable extends React.Component {
                                 .map(n => {
                                     const isSelected = this.isSelected(n.id);
                                     return (
-                                        <TableRow
-                                            hover
-                                            onClick={event => this.handleClick(event, n.id)}
-                                            role="checkbox"
-                                            aria-checked={isSelected}
-                                            tabIndex={-1}
-                                            key={n.id}
-                                            selected={isSelected}
-                                        >
-                                            <TableCell padding="checkbox">
-                                                <Checkbox checked={isSelected} />
-                                            </TableCell>
-                                            <TableCell component="th" scope="row" padding="none">
-                                                {n.name}
-                                            </TableCell>
-                                            <TableCell numeric>{n.calories}</TableCell>
-                                            <TableCell numeric>{n.fat}</TableCell>
-                                            <TableCell numeric>{n.carbs}</TableCell>
-                                            <TableCell numeric>{n.protein}</TableCell>
-                                        </TableRow>
+                                        <Fragment>
+
+                                            <TableRow
+                                                hover
+                                                onClick={event => this.handleClick(event, n.id)}
+                                                role="checkbox"
+                                                aria-checked={isSelected}
+                                                tabIndex={-1}
+                                                key={n.id}
+                                                selected={isSelected}
+                                            >
+                                                <TableCell padding="checkbox">
+                                                    <Checkbox checked={isSelected} />
+                                                </TableCell>
+                                                <TableCell component="th" scope="row" padding="none">
+                                                    {n.name}
+                                                </TableCell>
+                                                <TableCell numeric>{n.calories}</TableCell>
+                                                <TableCell numeric>{n.fat}</TableCell>
+                                                <TableCell numeric>{n.carbs}</TableCell>
+                                                <TableCell numeric>{n.protein}</TableCell>
+                                            </TableRow>
+                                        </Fragment>
+
                                     );
                                 })}
                             {emptyRows > 0 && (

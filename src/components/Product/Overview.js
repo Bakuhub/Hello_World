@@ -25,7 +25,7 @@ import SearchBar from '../Widget/SearchBar'
 import PurpleButton from '../Widget/PurpleButton'
 import WhiteButton from '../Widget/WhiteButton'
 import * as styleGuide from "../../constants/styleGuide";
-
+import WhiteDropDown from '../Widget/WhiteDropDown'
 let counter = 0;
 
 function createData(name, calories, fat, carbs, protein) {
@@ -334,7 +334,7 @@ class EnhancedTable extends React.Component {
                     <div className={classes.subTitleControl}>
                         <Grid container alignItems={'center'} justify={'space-between'}>
                             <Grid item>
-                                <WhiteButton
+                                <WhiteDropDown
                                     icon={'icon-filter-16'}
                                     icon2={'icon-down-16'}
                                     value={'Category'}
