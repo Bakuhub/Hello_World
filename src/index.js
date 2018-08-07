@@ -11,8 +11,8 @@ import App from './components/App';
 ReactDOM.render((
         <Provider store={store} style={{height: '100%'}}>
             <ConnectedRouter history={history} style={{height: '100%'}}>
-                <Switch style={{height: '100%'}}>
-                    <Route path="/" component={App} style={{height: '100%'}}/>
+                <Switch style={{height: '100%',}}>
+                    <Route path="/" component={App} style={{height: '100%',padding:'10px'}}/>
                 </Switch>
             </ConnectedRouter>
         </Provider>

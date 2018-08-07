@@ -5,11 +5,10 @@ import {withStyles} from '@material-ui/core/styles';
 import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
 import SearchBar from '../Widget/SearchBar'
-import Table from '../Widget/Table'
 import WhiteDropDown from '../Widget/WhiteDropDown'
 import WhiteButton from '../Widget/WhiteButton'
-import statusLabel from '../Widget/statusLabel'
 import OrderDetail from './Detail'
+
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -59,7 +58,8 @@ class OrdersOverview extends React.Component {
 
                             />
 
-                            <SearchBar/>
+                            <SearchBar
+                            placeHolder={'Search Orders...'}/>
                         </Grid>
                         <Grid item>
                             <WhiteButton
@@ -75,7 +75,33 @@ class OrdersOverview extends React.Component {
                     <Divider/>
                 </Grid>
                 <Grid item sm={12}>
-                    <Table/>
+                    <Grid container alignItems={'center'} style={{
+                        paddingLeft:'24px',
+                        paddingRight:'24px' }}>
+                        <Grid item sm={2}>
+                            order id
+                        </Grid>
+                        <Grid item sm={2}>
+                            status
+                        </Grid>
+                        <Grid item sm={2}>
+                        customer
+                        </Grid>
+                        <Grid item sm={2}>
+                            amount
+                        </Grid>
+                        <Grid item sm={2}>
+                            shop
+                        </Grid>
+                        <Grid item sm={2}>
+                            order created
+                        </Grid></Grid>
+                    <OrderDetail/>
+                    <OrderDetail/>
+                    <OrderDetail/>
+                    <OrderDetail/>
+                    <OrderDetail/>
+                    <OrderDetail/>
                 </Grid>
                 <Grid item sm={12}>
                 </Grid>

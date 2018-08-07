@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from 'react'
-import {Checkbox, FormControlLabel, Grid, Switch} from '@material-ui/core'
+import {Checkbox, FormControlLabel, Grid} from '@material-ui/core'
 import FormTitle from '../Widget/FormTitle'
 import {withStyles} from '@material-ui/core/styles';
 import InputBar from '../Widget/InputBar'
@@ -241,7 +241,11 @@ class ProductEdit extends React.Component {
                                     <Grid container alignItems={'stretch'} spacing={16} className={classes.form}>
                                         <Grid item sm={12} className={classes.formTitle}>
                                             <FormTitle title={'Product Options'}
-                                                       extra={<SwitchButton/>}/>
+                                                       extra={(
+                                                           <SwitchButton
+    onChange={this.productOptionSwitch()}
+                                                           />
+                                                       )}/>
                                         </Grid>
 
                                         {this.state.isProductOptionsShow === true && (

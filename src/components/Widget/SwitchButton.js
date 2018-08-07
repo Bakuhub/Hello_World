@@ -5,6 +5,7 @@ import purple from '@material-ui/core/colors/purple';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import * as  styleGuide from '../../constants/styleGuide'
 
 const styles = theme => ({
     colorSwitchBase: {
@@ -22,7 +23,7 @@ const styles = theme => ({
         '&$iOSChecked': {
             color: theme.palette.common.white,
             '& + $iOSBar': {
-                backgroundColor: '#52d869',
+                backgroundColor: styleGuide.purpleButton,
             },
         },
         transition: theme.transitions.create('transform', {
@@ -47,7 +48,7 @@ const styles = theme => ({
         marginLeft: -21,
         border: 'solid 1px',
         borderColor: theme.palette.grey[400],
-        backgroundColor: theme.palette.grey[50],
+        backgroundColor:'white',
         opacity: 1,
         transition: theme.transitions.create(['background-color', 'border']),
     },
@@ -86,12 +87,13 @@ class CustomizedSwitches extends React.Component {
                                 checked: classes.iOSChecked,
                             }}
                             disableRipple
-                            checked={this.state.checkedB}
-                            onChange={this.handleChange('checkedB')}
+                            checked={ this.props.checked}
+                            onChange={ this.props.onChange}
+
+
                             value="checkedB"
                         />
                     }
-                    label="iOS style"
                 />
         );
     }
