@@ -57,7 +57,9 @@ class WhiteButton extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Link to={this.props.link ? this.props.link : '#'} className={classes.root}>
+            <Link to={this.props.link ? this.props.link : '#'}
+                  onClick={this.props.onClick}
+                  className={classes.root}>
                 <Grid container alignItems={'center'}>
                     <span className={classes.icon + ' ' + this.props.icon}/>
                     <span className={classes.btnText}>

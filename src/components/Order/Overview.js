@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from 'react'
-import {Divider, Grid} from '@material-ui/core'
+import {Divider, Grid,Collapse} from '@material-ui/core'
 import {withStyles} from '@material-ui/core/styles';
 import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
@@ -8,6 +8,7 @@ import SearchBar from '../Widget/SearchBar'
 import WhiteDropDown from '../Widget/WhiteDropDown'
 import WhiteButton from '../Widget/WhiteButton'
 import OrderDetail from './Detail'
+import Example from '../Widget/DatePicker'
 
 const styles = theme => ({
     root: {
@@ -28,13 +29,10 @@ const styles = theme => ({
 });
 
 class OrdersOverview extends React.Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
-
-            open: true
-
-
+            open: true,
         }
 
     }
@@ -55,7 +53,6 @@ class OrdersOverview extends React.Component {
                             <WhiteDropDown
                                 icon={'icon-more-16'}
                                 value={'Filter'}
-
                             />
 
                             <SearchBar
@@ -104,6 +101,7 @@ class OrdersOverview extends React.Component {
                     <OrderDetail/>
                 </Grid>
                 <Grid item sm={12}>
+<Example/>
                 </Grid>
             </Grid>);
     }
