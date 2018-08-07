@@ -18,7 +18,8 @@ import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
-
+import {Grid,Collapse,ListItemText,ListItem} from '@material-ui/core'
+import OrderDetail from '../Order/Detail'
 let counter = 0;
 function createData(name, calories, fat, carbs, protein) {
     counter += 1;
@@ -65,7 +66,7 @@ class EnhancedTableHead extends React.Component {
                             >
                                 <Tooltip
                                     title="Sort"
-                                    placement={column.numeric ? 'bottom-end' : 'bottom-start'}
+                                    placement={'bottom-end'}
                                     enterDelay={300}
                                 >
                                     <TableSortLabel
@@ -284,6 +285,7 @@ class EnhancedTable extends React.Component {
                                     return (
                                         <Fragment>
 
+
                                             <TableRow
                                                 hover
                                                 onClick={event => this.handleClick(event, n.id)}
@@ -304,6 +306,13 @@ class EnhancedTable extends React.Component {
                                                 <TableCell numeric>{n.carbs}</TableCell>
                                                 <TableCell numeric>{n.protein}</TableCell>
                                             </TableRow>
+                                            <Collapse in={true} timeout="auto" unmountOnExit>
+                                                <TableRow component="div" disablePadding style={ {width:"100%"}}>
+
+
+
+                                                </TableRow>
+                                            </Collapse>
                                         </Fragment>
 
                                     );

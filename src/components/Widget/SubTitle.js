@@ -27,8 +27,6 @@ class SubTitle extends React.Component {
             <div className={classes.root}>
                 {this.props.title}
             </div>
-
-
         );
     }
 }

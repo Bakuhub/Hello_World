@@ -1,99 +1,71 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import {Grid,ListItem,Typography} from '@material-ui/core'
-import {Link} from 'react-router-dom'
-import * as styleGuide from '../../../constants/styleGuide'
-import WhiteButton from '../../Widget/WhiteButton'
-const CustomTableCell = withStyles(theme => ({
-    head: {
-        backgroundColor: styleGuide.greyInputBackGround,
-        color: styleGuide.purpleText,
-    },
-    body: {
-        fontSize: 14,
-    },
-}))(TableCell);
+import ListSubheader from '@material-ui/core/ListSubheader';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Collapse from '@material-ui/core/Collapse';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import DraftsIcon from '@material-ui/icons/Drafts';
+import SendIcon from '@material-ui/icons/Send';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import StarBorder from '@material-ui/icons/StarBorder';
 
 const styles = theme => ({
-    table: {
-        width:'100%',
-
+    root: {
+        width: '100%',
     },
-    row: {
-        '&:nth-of-type(odd)': {
-        },
+    nested: {
+        paddingLeft: theme.spacing.unit * 4,
     },
 });
 
-let id = 0;
-function createData(name, calories, fat, carbs, protein) {
-    id += 1;
-    return { id, name, calories, fat, carbs, protein };
+class NestedList extends React.Component {
+    state = { open: true };
+
+    handleClick = () => {
+        this.setState(state => ({ open: !state.open }));
+    };
+
+    render() {
+        const { classes } = this.props;
+
+        return (
+            <div className={classes.root}>
+                <List
+                    component="nav"
+                    subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
+                >
+                    <ListItem button onClick={this.handleClick}>
+
+                        <ListItemText >
+
+
+
+                        </ListItemText>
+                        {this.state.open ? <ExpandLess /> : <ExpandMore />}
+                    </ListItem>
+                    <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+                        <List component="div" disablePadding>
+                            <ListItem button className={classes.nested}>
+                                <ListItemIcon>
+                                    <StarBorder />
+                                </ListItemIcon>
+                                <ListItemText inset primary="Starred" />
+                            </ListItem>
+                        </List>
+                    </Collapse>
+                </List>
+            </div>
+        );
+    }
 }
 
-const data = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-function CustomizedTable(props) {
-    const { classes } = props;
-
-    return (
-        <Table className={classes.table}>
-            <TableHead>
-                <TableRow>
-                    <CustomTableCell>color | size</CustomTableCell>
-                    <CustomTableCell numeric>SKU</CustomTableCell>
-                    <CustomTableCell numeric>price</CustomTableCell>
-                    <CustomTableCell numeric> </CustomTableCell>
-                </TableRow>
-            </TableHead>
-            <TableBody>
-                {data.map(n => {
-                    return (
-                        <TableRow className={classes.row} key={n.id}>
-                            <CustomTableCell component="th" scope="row">
-                                {
-                                    n.name+' | '+n.calories
-                                }
-                            </CustomTableCell>
-                            <CustomTableCell numeric contenteditable="true">
-                                {n.fat}
-                            </CustomTableCell >
-                            <CustomTableCell numeric contenteditable="true">
-                                {n.carbs}
-                            </CustomTableCell>
-                            <CustomTableCell >
-
-                                <WhiteButton
-                                    icon={'icon-view-16'}
-                                    link={'/products/productId/variantId'}
-                                    value={'Manage Variant'}
-                                />
-
-
-                            </CustomTableCell>
-                        </TableRow>
-                    );
-                })}
-            </TableBody>
-        </Table>
-    );
-}
-
-CustomizedTable.propTypes = {
+NestedList.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(CustomizedTable);
+export default withStyles(styles)(NestedList);

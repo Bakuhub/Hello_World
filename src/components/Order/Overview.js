@@ -9,7 +9,7 @@ import Table from '../Widget/Table'
 import WhiteDropDown from '../Widget/WhiteDropDown'
 import WhiteButton from '../Widget/WhiteButton'
 import statusLabel from '../Widget/statusLabel'
-
+import OrderDetail from './Detail'
 const styles = theme => ({
     root: {
         padding: '40px'

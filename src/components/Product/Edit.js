@@ -14,6 +14,7 @@ import PurpleButton from '../Widget/PurpleButton'
 import WhiteButton from '../Widget/WhiteButton'
 import VariantCombinationTable from './Details/VariantCombinationTable'
 import InputBarWithButton from '../Widget/InputBarWithButton'
+import SwitchButton from '../Widget/SwitchButton'
 
 const styles = theme => ({
     root: {
@@ -240,20 +241,7 @@ class ProductEdit extends React.Component {
                                     <Grid container alignItems={'stretch'} spacing={16} className={classes.form}>
                                         <Grid item sm={12} className={classes.formTitle}>
                                             <FormTitle title={'Product Options'}
-                                                       extra={(
-                                                           <FormControlLabel
-                                                               control={
-                                                                   <Switch
-
-                                                                       checked={this.state.checkedB}
-                                                                       onChange={this.productOptionSwitch()}
-                                                                       value="checkedB"
-
-                                                                   />
-                                                               }
-                                                               style={{float: 'right',}}
-                                                           />
-                                                       )}/>
+                                                       extra={<SwitchButton/>}/>
                                         </Grid>
 
                                         {this.state.isProductOptionsShow === true && (
