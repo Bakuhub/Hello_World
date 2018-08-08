@@ -8,8 +8,7 @@ import SearchBar from '../Widget/SearchBar'
 import WhiteDropDown from '../Widget/WhiteDropDown'
 import WhiteButton from '../Widget/WhiteButton'
 import OrderDetail from './Detail'
-import Example from '../Widget/DatePicker'
-
+import Header from '../Layout/Body/Header'
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -43,34 +42,32 @@ class OrdersOverview extends React.Component {
 
         return (
             <Grid container className={classes.root}>
-                <Grid item sm={12}>
 
-                    <SubTitle title={'Orders'}/></Grid>
-                <Grid item sm={12}>
-                    <Grid container justify={'space-between'} alignItems={'center'}>
-                        <Grid item>
+                <Header
+                title={(
+                    <SubTitle title={'Orders'}/>
 
-                            <WhiteDropDown
-                                icon={'icon-more-16'}
-                                value={'Filter'}
-                            />
+                )}
+                leftControl={(
+                    <Grid container alignItems={'center'}>
 
-                            <SearchBar
+                        <WhiteDropDown
+                            icon={'icon-more-16'}
+                            value={'Filter'}
+                        />
+
+                        <SearchBar
                             placeHolder={'Search Orders...'}/>
-                        </Grid>
-                        <Grid item>
-                            <WhiteButton
-                                icon={'icon-share-16'}
-                                value={'Export List'}
-                            />
-                        </Grid>
                     </Grid>
-                </Grid>
+                )}
+                rightControl={(
+                    <WhiteButton
+                        icon={'icon-share-16'}
+                        value={'Export List'}
+                    />
+                )}
 
-
-                <Grid item sm={12}>
-                    <Divider/>
-                </Grid>
+                />
                 <Grid item sm={12}>
                     <Grid container alignItems={'center'} style={{
                         paddingLeft:'24px',
@@ -101,7 +98,6 @@ class OrdersOverview extends React.Component {
                     <OrderDetail/>
                 </Grid>
                 <Grid item sm={12}>
-<Example/>
                 </Grid>
             </Grid>);
     }

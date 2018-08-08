@@ -15,7 +15,7 @@ import WhiteButton from '../Widget/WhiteButton'
 import VariantCombinationTable from './Details/VariantCombinationTable'
 import InputBarWithButton from '../Widget/InputBarWithButton'
 import SwitchButton from '../Widget/SwitchButton'
-
+import Header from '../Layout/Body/Header'
 const styles = theme => ({
     root: {
         padding: '40px',
@@ -97,31 +97,29 @@ class ProductEdit extends React.Component {
 
                 <Grid item sm={12}>
                     <Grid container spacing={40}>
-                        <Grid container className={classes.title}>
-                            <Grid item sm={12}>
-
+                        <Header
+                            backArrow={(
                                 <BackArrow title={'back to product list'} link={'/products'}/>
 
+                            )}
+                            title={(
+                                <SubTitle title={'Product Name'}/>
 
-                            </Grid>
-                            <Grid item sm={12}>
-                                <Grid container justify={'space-between'} alignItems={'center'}>
-                                    <Grid item>
-                                        <SubTitle title={'Product Name'}/>
-                                    </Grid>
-                                    <Grid item>
+                            )}
+                            titleButton={(
+                                <Grid container>
+                                    <WhiteButton
+                                        link={'/products'}
+                                        value={'Cancel'}
 
-                                        <WhiteButton
-                                            link={'/products'}
-                                            value={'Cancel'}
-
-                                        />
-                                        <PurpleButton
-                                            link={'/products'}
-                                            value={'Save Changes'}
-                                        />
-                                    </Grid></Grid>
-                            </Grid></Grid>
+                                    />
+                                    <PurpleButton
+                                        link={'/products'}
+                                        value={'Save Changes'}
+                                    />
+                                </Grid>
+                            )}
+                        />
 
                         <Grid item sm={4}>
                             <Grid container direction={'column'} spacing={40}>

@@ -24,6 +24,7 @@ const styles = theme => ({
     btnText: {
         color: 'white',
         fontSize: styleGuide.L,
+        fontFamily:'ocsSemiBold',
 
 
     },

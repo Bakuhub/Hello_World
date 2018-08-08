@@ -42,12 +42,16 @@
 
 *{
     font-family:ocs;
-    color: #3f3D52;
+    color: #311052;
 }
 
 * a{
     text-decoration: none;
 }
+* :focus{
+    outline: none;
+}
+
 
 .Display4{
     font-size: 28px;

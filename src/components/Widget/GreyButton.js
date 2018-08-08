@@ -5,18 +5,14 @@ import {withStyles} from '@material-ui/core/styles';
 import PropTypes from "prop-types";
 import {Link} from 'react-router-dom'
 
-const statusOptions ={
-    success:'black',
-
-}
 
 const styles = theme => ({
-    root:{
-        display:'inline-block',
-        backgroundColor: statusOptions[this.props.value],
-        padding:'10px 20px',
-        border:'1px solid'+styleGuide.greyDivider,
-        maxHeight:'40px'
+    root: {
+        display: 'inline-block',
+        backgroundColor: '#FAFAFA',
+        padding: '10px 20px',
+        border: '1px solid' + styleGuide.greyDivider,
+        maxHeight: '40px',
     },
     title: {
         color: styleGuide.lighterText,
@@ -25,19 +21,20 @@ const styles = theme => ({
         fontWeight: 'lighter',
         paddingBottom: styleGuide.M,
     },
-    btnText:{
-        fontSize:styleGuide.L,
+    btnText: {
+        fontSize: styleGuide.L,
+        fontFamily:'ocsSemiBold',
 
 
     },
-    icon:{
-        fontSize:styleGuide.XL,
-        marginRight:'5px',
+    icon: {
+        fontSize: styleGuide.XL,
+        marginRight: '5px',
     }
 
 });
 
-class StatusLabel extends React.Component {
+class WhiteButton extends React.Component {
     state = {
         anchor: 'left',
     };
@@ -46,7 +43,6 @@ class StatusLabel extends React.Component {
         super()
         this.state = {
             placeHolder: '',
-
 
         }
     }
@@ -58,25 +54,28 @@ class StatusLabel extends React.Component {
         });
     };
 
-
     render() {
         const {classes} = this.props;
 
         return (
-            <div className={classes.root} style={ {backgroundColor:statusOptions[this.props.value]}}>
+            <Link to={this.props.link ? this.props.link : '#'}
+                  onClick={this.props.onClick}
+                  className={classes.root}>
                 <Grid container alignItems={'center'}>
+                    <span className={classes.icon + ' ' + this.props.icon}/>
                     <span className={classes.btnText}>
                                                 {this.props.value}
 
                     </span>
+                    <span className={classes.icon + ' ' + this.props.icon2}/>
                 </Grid>
-            </div>
+            </Link>
         )
     }
 }
 
-StatusLabel.propTypes = {
+WhiteButton.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(StatusLabel);
+export default withStyles(styles)(WhiteButton);

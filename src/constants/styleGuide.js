@@ -19,6 +19,13 @@ export const formBlock = {
     padding: '30px 30px 50px 30px',
     backgroundColor:'white',
 }
+export const tableBlock = {
+    boxShadow: '-7px 8px 16px 0px #F0F1F3',
+    borderRadius: '5px',
+    border: regBorder,
+    padding:'0',
+    backgroundColor:'white',
+}
 export const regBorder='1px solid #E8E4ED'
 export const shopListItem ={
     height: '100%',
@@ -27,3 +34,30 @@ export const shopListItem ={
 }
 export const textBoxShadow='inset 0 2px 2px 0 #efefef'
 
+export const tableHeader={
+fontFamily:'ocsBold',
+    fontSize:M,
+textTransform: 'uppercase',
+color:'#9d91ab',
+}
+export const headerDivider={
+    marginBottom:'30px',
+}
+export const imgWraper= {
+    width: '85px',
+    minHeight: "85px",
+    maxHeight: 'auto',
+    float: 'left',
+    height: '85px',
+    margin: '3px 20px 3px 3px',
+    padding: '3px',
+    borderRadius: '2px',
+
+}
+export const imgWraped={
+    maxWidth: '100%',
+    objectFit: 'cover',
+    minHeight: '85px',
+    height: 'auto',
+    borderRadius: '2px',
+}

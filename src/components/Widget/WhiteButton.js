@@ -23,6 +23,7 @@ const styles = theme => ({
     },
     btnText: {
         fontSize: styleGuide.L,
+        fontFamily:'ocsSemiBold',
 
 
     },

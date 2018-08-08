@@ -10,8 +10,10 @@ const styles = theme => ({
     root: {
         display: 'inline-block',
         backgroundColor: 'white',
-        padding: '5px 20px',
+        padding: '7px 20px',
         border: '1px solid' + styleGuide.greyDivider,
+        borderLeft:'0',
+        boxShadow: 'inset 0 1px 2px 0px #ededed',
         width:'300px'
     },
     title: {

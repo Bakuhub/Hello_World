@@ -23,9 +23,11 @@ import {
 import {Link} from 'react-router-dom'
 import SearchBar from '../Widget/SearchBar'
 import PurpleButton from '../Widget/PurpleButton'
-import WhiteButton from '../Widget/WhiteButton'
 import * as styleGuide from "../../constants/styleGuide";
 import WhiteDropDown from '../Widget/WhiteDropDown'
+import Header from '../Layout/Body/Header'
+import SubTitle from '../Widget/SubTitle'
+
 let counter = 0;
 
 function createData(name, calories, fat, carbs, protein) {
@@ -135,8 +137,7 @@ let EnhancedTableToolbar = props => {
         <Toolbar
             className={classNames(classes.root, {
                 [classes.highlight]: numSelected > 0,
-            })}
-        >
+            })}>
             <div className={classes.title}>
                 {numSelected > 0 ? (
                     <Typography color="inherit" variant="subheading">
@@ -184,6 +185,7 @@ const styles = theme => ({
     table: {
         minWidth: 1000,
     },
+    rootTable: styleGuide.tableBlock,
     tableImg: {
         display: 'flex',
         alignItems: 'center',
@@ -329,22 +331,28 @@ class EnhancedTable extends React.Component {
 
 
                 <Grid item sm={12}>
-                    <div className={'Darker Display4'}> Product List</div>
 
-                    <div className={classes.subTitleControl}>
-                        <Grid container alignItems={'center'} justify={'space-between'}>
-                            <Grid item>
-                                <WhiteDropDown
-                                    icon={'icon-filter-16'}
-                                    icon2={'icon-down-16'}
-                                    value={'Category'}
-                                />
+                    <Header
+                        title={(
+                            <SubTitle title={'Product List'}/>
+                            )}
+                        leftControl={(
+                            <div>
+                                    <WhiteDropDown
+                                        icon={'icon-filter-16'}
+                                        icon2={'icon-down-16'}
+                                        value={'Category'}
+                                    />
 
 
-                                <SearchBar placeHolder={'search products...'}/>
-                            </Grid>
-                            <Grid item>
+                                    <SearchBar placeHolder={'search products...'}/>
+                            </div>
 
+                        )
+
+                        }
+                        rightControl={
+                            (
                                 <PurpleButton
                                     link={'/products/new'}
                                     value={'Add Product'}
@@ -352,13 +360,11 @@ class EnhancedTable extends React.Component {
                                     className={classes.floatRight}
 
                                 />
-                            </Grid>
-                        </Grid>
+                            )
+                        }
+                    />
 
-                    </div>
-                    <br/>
-
-                    <Paper className={classes.root}>
+                    <Paper className={classes.rootTable}>
                         <div>
                             <Table className={classes.table} aria-labelledby="tableTitle">
                                 <EnhancedTableHead

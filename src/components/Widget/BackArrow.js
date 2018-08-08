@@ -9,12 +9,13 @@ const styles = theme => ({
     root:{
 margin:0,
         padding:'5px 0px',
-        width:'150px'
+        display:'inline-block',
     },
     backArrow: {
         fontSize: styleGuide.M,
         fontWeight: 'bold',
         color: styleGuide.lighterText,
+        textTransform:'Uppercase',
     },
     icon: {
         compose: 'icon-left-16',
@@ -37,11 +38,12 @@ class BackArrow extends React.Component {
 
         return (
                 <Fragment>
-                    <ListItem button component={Link} to={this.props.link} className={classes.root}>
+                    <a  href={this.props.link} className={classes.root}>
                     <span className={'icon-left-16'} style={{fontSize: '10px'}}/>
                     <span className={classes.backArrow}>
                      &nbsp;   {this.props.title}
-                    </span></ListItem>
+                    </span>
+                    </a>
                     <br/>
                     <br/>
                 </Fragment>

@@ -11,6 +11,7 @@ import BackArrow from '../Widget/BackArrow'
 import WhiteButton from '../Widget/WhiteButton'
 import PurpleButton from '../Widget/PurpleButton'
 import InputBarWithButton from '../Widget/InputBarWithButton'
+import Header from '../Layout/Body/Header'
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -60,35 +61,33 @@ class Variant extends React.Component {
 
                 <Grid item sm={12}>
                     <Grid container spacing={40}>
-                        <Grid container className={classes.title}>
-                            <Grid item sm={12}>
+                        <Header
+                            title={(
+                                <SubTitle title={'Product Name'}/>
 
+                            )}
+                            backArrow={(
                                 <BackArrow title={'back to product list'}
                                            link={'/products/g'}/>
 
+                            )}
+                            titleButton={(
+                                <Grid item>
 
-                            </Grid>
-                            <Grid item sm={12}>
-                                <Grid container justify={'space-between'}>
-                                    <Grid item>
-                                        <SubTitle title={'Product Name'}/>
-                                    </Grid>
-                                    <Grid item className={classes.saveCancelButton}>
-
-                                        <WhiteButton
-                                            link={'/products/new'}
-                                            value={'Cancel'}
-                                        />
-                                        <PurpleButton
-                                            value={'Update Variant'}
-                                            link={'/products/new'}
+                                    <WhiteButton
+                                        link={'/products/new'}
+                                        value={'Cancel'}
+                                    />
+                                    <PurpleButton
+                                        value={'Update Variant'}
+                                        link={'/products/new'}
 
 
-                                        />
-                                    </Grid>
-                                </Grid></Grid>
+                                    />
+                                </Grid>
+                            )}
+                        />
 
-                        </Grid>
 
                         <Grid item sm={4}>
                             <Grid container direction={'column'} spacing={40}>

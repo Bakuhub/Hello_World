@@ -1,50 +1,43 @@
 import React from 'react'
-import {Divider, Grid, ListItem} from '@material-ui/core'
+import {Grid, ListItem} from '@material-ui/core'
 import SubTitle from '../Widget/SubTitle'
 import BackArrow from '../Widget/BackArrow'
 import {Link} from 'react-router-dom'
 import BlogSection from './Blogs/Sections/Overview'
-import * as styleGuide from "../../constants/styleGuide";
 import {withStyles} from '@material-ui/core/styles';
 import PropTypes from "prop-types";
 import PurpleButton from '../Widget/PurpleButton'
 import WhiteButton from '../Widget/WhiteButton'
-
+import Header from '../Layout/Body/Header'
+import ToolBar from '../Widget/FeedsToolBar'
 const styles = theme => ({
     root: {
         padding: '40px'
     },
     title: {
-        fontSize: styleGuide.XXL,
-        fontWeight: 'bold',
-    },
-    body: {
-        border: styleGuide.regBorder,
-        padding: '0px 30px',
-        marginTop: '30px',
+        fontSize: '20px',
+        fontFamily: 'ocsSemiBold',
+        borderBottom: '0',
+        border: 'none',
+        background: 'none',
+        minWidth: '340px',
 
+        '&::placeholder': {
+            fontSize: '20px',
+        }
+    },
+    content: {
+        backgroundColor: 'white',
+    },
+    headerBar: {
+        padding: '45px 30px 30px',
     },
     toolBar: {
-        border: styleGuide.regBorder,
-    },
-    whiteButton: {
-        border: styleGuide.regBorder,
-        fontSize: styleGuide.M,
-        height: '35px',
-        padding: '0 10%',
-
-    },
-
-    purpleButton: {
-        backgroundColor: styleGuide.purpleText,
-        border: styleGuide.regBorder,
-        fontSize: styleGuide.M,
-        color: 'white',
-        height: '35px',
-
-        padding: '0 10%',
+        background: '#efefef',
+        padding: '10px 30px',
+        borderTop: '1px solid #dfdfdf',
+        borderBottom: '1px solid #dfdfdf',
     }
-
 
 });
 
@@ -60,90 +53,67 @@ class FeedsEdit extends React.Component {
         const {classes} = this.props;
 
         return (
-            <Grid container alignItems={'center'} className={classes.root}>
-                <Grid item sm={12}>
-                    <BackArrow title={'back to blog list'} link={'/feeds'}/>
-                </Grid>
-                <Grid item sm={8}>
-                    <SubTitle title={'Create a blog post'}/></Grid>
-                <Grid item sm={4}>
-                    <Grid container
-                          justify={'flex-end'}
-                          spacing={16} alignItems={'center'}>
-                        <Grid item>
-                            <PurpleButton
-                                link={'/feeds/new'}
-                                icon={'icon-view-16'}
-                                value={'preview post'}
-                            />
-                        </Grid>
-                        <Grid item>
+            <Grid container alignItems={'center'} justify={'center'} className={classes.root}>
+                <Header
+                    backArrow={(
+                        <BackArrow title={'back to blog list'} link={'/feeds'}/>
 
-                            <WhiteButton
-                                link={'/feeds'}
-                                value={'Publish Article'}
+                    )}
+                    title={(
+                        <SubTitle title={'Create a blog post'}/>
 
-                            />
-                        </Grid>
-                    </Grid>
-                </Grid>
-
-
-                <Grid item sm={12}>
-                    <Divider/>
-                </Grid>
-                <Grid item sm={2}/>
-                <Grid item sm={8}>
-                    <Grid container alignItems={'center'} justify={'center'} className={classes.body}>
-
-                        <Grid item sm={9}>
-                            <div className={classes.title}>
-                                Products that will make your life easier
-                            </div>
-                        </Grid>
-
-                        <Grid item sm={3}>
-                            <Grid container>
+                    )}
+                    titleButton={(
+                        <Grid container
+                              justify={'flex-end'}
+                              spacing={16} alignItems={'center'}>
+                            <Grid item>
                                 <PurpleButton
-                                    link={'/feeds'}
-                                    value={'Save Changes...'}
+                                    link={'/feeds/new'}
+                                    icon={'icon-view-16'}
+                                    value={'preview post'}
                                 />
-                                <Link to={'/feeds'} className={' icon-more-16'}/>
+                            </Grid>
+                            <Grid item>
+
+                                <WhiteButton
+                                    link={'/feeds'}
+                                    value={'Publish Article'}
+
+                                />
+                            </Grid>
+                        </Grid>
+                    )}
+
+
+                />
+
+
+                <Grid item sm={10} className={classes.content}>
+
+
+                    <Grid container alignItems={'center'} justify={'center'}>
+                        <Grid item sm={12} container justify={'space-between'} className={classes.headerBar}>
+                            <Grid item>
+                                <input
+                                    className={classes.title}
+                                    placeholder={'What is the title of this blog post?'}
+                                />
                             </Grid>
 
+                            <Grid item>
+                                <Grid container>
+
+                                    <Link to={'/feeds'} className={' icon-more-16'}/>
+                                </Grid>
+
+                            </Grid>
                         </Grid>
                         <Grid item sm={12}>
                             <Grid container>
                                 <Grid item sm={12}>
                                     <div className={classes.toolBar}>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
-                                        <span className={'icon-upload-24'}/>
+                                   <ToolBar/>
                                     </div>
                                 </Grid>
 
@@ -153,10 +123,14 @@ class FeedsEdit extends React.Component {
                         <Grid item sm={12}>
                             <Grid container>
                                 <Grid item sm={12}>
+                                    <BlogSection />
+                                </Grid>
+                                <Grid item sm={12}>
+                                    <BlogSection/>
+                                </Grid>
+                                <Grid item sm={12}>
                                     <BlogSection/>
                                 </Grid><Grid item sm={12}>
-                                <BlogSection/>
-                            </Grid><Grid item sm={12}>
                                 <BlogSection/>
                             </Grid><Grid item sm={12}>
                                 <BlogSection/>
@@ -175,8 +149,9 @@ class FeedsEdit extends React.Component {
                         </Grid>
 
                     </Grid>
+
+
                 </Grid>
-                <Grid item sm={2}/>
 
             </Grid>);
     }

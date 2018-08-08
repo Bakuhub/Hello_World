@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from 'react'
-import {Divider, Grid,Collapse} from '@material-ui/core'
+import {Collapse, Grid} from '@material-ui/core'
 import {withStyles} from '@material-ui/core/styles';
 import * as styleGuide from '../../constants/styleGuide'
 import SubTitle from '../Widget/SubTitle'
@@ -10,6 +10,8 @@ import {Link} from 'react-router-dom'
 import WhiteButton from '../Widget/WhiteButton'
 import WhiteDropDown from '../Widget/WhiteDropDown'
 import DatePicker from '../Widget/DatePicker'
+import Header from '../Layout/Body/Header'
+
 const styles = theme => ({
     root: {
         padding: '40px'
@@ -24,7 +26,8 @@ const styles = theme => ({
     childInput: {
         padding: '60px'
     },
-    shopListItem: styleGuide.shopListItem
+    shopListItem: styleGuide.shopListItem,
+    divider: styleGuide.headerDivider,
 
 });
 
@@ -32,21 +35,22 @@ class FeedsOverview extends React.Component {
     constructor() {
         super()
         this.state = {
-            openDatePicker:false,
-            startDate:'',
-            endDate:''
+            openDatePicker: false,
+            startDate: '',
+            endDate: ''
 
         }
 
     }
-    openDatePicker=()=>event=>{
-        this.setState({openDatePicker:!this.state.openDatePicker})
+
+    openDatePicker = () => event => {
+        this.setState({openDatePicker: !this.state.openDatePicker})
     }
-    getData=(a,b)=>{
+    getData = (a, b) => {
         this.setState(
             {
-                startDate:a,
-                endDate:b,
+                startDate: a,
+                endDate: b,
             }
         )
     }
@@ -57,67 +61,68 @@ class FeedsOverview extends React.Component {
         return (
             <Grid container className={classes.root}>
                 <Grid item sm={12}>
+                    <Header
+                        title={(<SubTitle title={'Blog Feed'}/>)}
+                        leftControl={(<Grid container alignItems={'center'}>
+                            <WhiteButton
+                                icon={'icon-calendar-16'}
+                                value={this.state.startDate + "-" + this.state.endDate}
+                                onClick={this.openDatePicker()}
 
-                    <SubTitle title={'Blog Feed'}/></Grid>
-                <Grid item sm={8}>
-                    <Grid container alignItems={'center'}>
-                        <WhiteButton
-                            icon={'icon-calendar-16'}
-                            value={this.state.startDate + "-" + this.state.endDate}
-                            onClick={this.openDatePicker()}
+                            />
 
-                        />
+                            <WhiteDropDown
+                                icon={'icon-filter-16'}
+                                icon2={'icon-down-16'}
+                                value={'All'}
 
-                        <WhiteDropDown
-                            icon={'icon-filter-16'}
-                            icon2={'icon-down-16'}
-                            value={'All'}
+                            />
+                            <SearchBar placeHolder={'Search Blogs'}/>
 
-                        />
-                        <SearchBar placeHolder={'Search Blogs'}/>
-
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={2}/>
-                <Grid item sm={2}>
-                    <Link to={'/feeds/new'}>
-                        <Grid container alignItems={'center'} justify={'center'} className={'regHeight purpleButton '}>
-                            <Grid item>
-                                <div className={' icon-add-16'} style={{fontSize: '14px'}}/>
-                            </Grid>
-                            <Grid item>
-                                <span className={'Lighter SubHeading'}>&nbsp;Create Blog Post</span>
-                            </Grid>
-                        </Grid>
-                    </Link>
-                </Grid>
-
-                <Grid item sm={12}>
-                    <Collapse in={this.state.openDatePicker}>
-                    <DatePicker
-startDate={this.state.startDate}
-endDate={this.state.endDate}
-
+                        </Grid>)}
+                        rightControl={
+                            (
+                                <Link to={'/feeds/new'}>
+                                    <Grid container alignItems={'center'} justify={'center'}
+                                          className={'regHeight purpleButton '}>
+                                        <Grid item>
+                                            <div className={' icon-add-16'} style={{fontSize: '14px'}}/>
+                                        </Grid>
+                                        <Grid item>
+                                            <span className={'Lighter SubHeading'}>&nbsp;Create Blog Post</span>
+                                        </Grid>
+                                    </Grid>
+                                </Link>
+                            )
+                        }
+                        toolBar={
+                            (
+                                <Collapse in={this.state.openDatePicker}>
+                                    <DatePicker
+                                        startDate={this.state.startDate}
+                                        endDate={this.state.endDate}
 
 
+                                    />
+
+                                </Collapse>
+                            )
+                        }
                     />
-
-                    </Collapse>
-                    <Divider/>
                 </Grid>
+
                 <Grid item sm={12}>
                     <Grid container alignItems={'center'} justify={'center'}>
-                        <Grid item>
+                        <Grid item sm={10}>
                             <BlogsCol/>
                         </Grid>
-                        <Grid item>
+                        <Grid item sm={10}>
                             <BlogsCol/>
                         </Grid>
-                        <Grid item>
+                        <Grid item sm={10}>
                             <BlogsCol/>
                         </Grid>
-                        <Grid item>
+                        <Grid item sm={10}>
                             <BlogsCol/>
                         </Grid>
                     </Grid>
